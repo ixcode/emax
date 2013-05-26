@@ -2,3 +2,6 @@ target
 bin
 .emax_restore
 .emacs.d_restore
+.backups
+elpa
+auto-save-list
