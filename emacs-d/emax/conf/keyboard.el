@@ -47,6 +47,8 @@
 
   (setq org-support-shift-select t))
 
-
-
-
+  (add-hook 'shell-mode
+          (lambda ()
+            (local-set-key (kbd "A-p") 'comint-previous-input)
+            (local-set-key (kbd "A-n") 'comint-next-input)
+            ))

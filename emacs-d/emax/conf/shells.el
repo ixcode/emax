@@ -1,0 +1,1 @@
+(load "ssh-shell.el")

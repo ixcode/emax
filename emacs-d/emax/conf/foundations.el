@@ -23,6 +23,8 @@
 
 (setq exec-path (append exec-path '("/usr/local/bin")))
 
+(setq resize-mini-windows nil) ;; Stop the minibuffer from resizing all the time
+
 (server-start)
 
 (load "ido-conf.el")
