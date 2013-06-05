@@ -54,3 +54,6 @@
             ))
 
 (global-set-key (kbd "<f5>") 'magit-status)
+
+(global-unset-key (kbd "s-P")) ;; was print buffer
+(global-set-key (kbd "s-P") 'magit-push)
