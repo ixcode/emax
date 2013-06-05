@@ -1,6 +1,9 @@
 ;; Provides some functions for making remote shells easier 
 ;; A bit beta right now so theres no packaging or anything
 
+(defun first (list)
+  (car list))
+
 (defun current-hostname ()
   (first (split-string (shell-command-to-string "hostname") "\n")))
 

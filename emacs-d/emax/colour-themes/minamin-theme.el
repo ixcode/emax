@@ -207,3 +207,8 @@ This requires library `rainbow-mode'.")
   (font-lock-remove-keywords nil minamin-colors-font-lock-keywords))
 
 (set-cursor-color 'purple)
+;;(set-face-background 'ac-candidate-face "#555555")
+;;(set-face-underline 'ac-candidate-face "#555555")
+;;(set-face-background 'ac-selection-face "#777777")
+
+

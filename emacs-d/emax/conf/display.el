@@ -12,6 +12,15 @@
 ;; By default don't wrap lines
 (setq-default truncate-lines t)
 
+;; Display line and column numbers
+(setq line-number-mode    t)
+(setq column-number-mode  t)
+
+;; Explicitly show the end of a buffer
+(set-default 'indicate-empty-lines t)
+
+
+
 
 (global-font-lock-mode 1) ;; allows syntax highlighting to work
 
@@ -30,5 +39,9 @@
 
 (when (fboundp 'fringe-mode)
   (fringe-mode '(8 . 0))) ;; Fringe widths (left . right) should be in pixels
+
+(load "headerline.el")
+(load "modeline.el")
+
 
 

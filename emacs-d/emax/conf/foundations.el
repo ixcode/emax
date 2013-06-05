@@ -1,12 +1,13 @@
 (require 'package)
 
-(package-initialize)
+
 
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")))
+			 ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+(package-initialize)
 ; fetch the list of packages available 
 (when (not package-archive-contents)
   (package-refresh-contents))
@@ -23,7 +24,25 @@
 
 (setq exec-path (append exec-path '("/usr/local/bin")))
 
+(defun setenv-from-shell (varname)
+  (setenv varname (env-var-from-shell varname)))
+
+;; from http://stackoverflow.com/questions/6411121/how-to-make-emacs-to-use-my-bashrc-file
+(defun set-exec-path-from-shell-PATH ()
+  (let ((path-from-shell (replace-regexp-in-string
+                          "[ \t\n]*$"
+                          ""
+                          (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq eshell-path-env path-from-shell) ; for eshell users
+    (setq exec-path (split-string path-from-shell path-separator))))
+
+(if window-system (set-exec-path-from-shell-PATH))
+
+
 (setq resize-mini-windows nil) ;; Stop the minibuffer from resizing all the time
+
+
 
 (server-start)
 

@@ -52,3 +52,5 @@
             (local-set-key (kbd "A-p") 'comint-previous-input)
             (local-set-key (kbd "A-n") 'comint-next-input)
             ))
+
+(global-set-key (kbd "<f5>") 'magit-status)

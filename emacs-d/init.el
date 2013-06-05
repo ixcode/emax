@@ -8,6 +8,7 @@
 (load "display.el")
 
 (load "foundations.el")
+(load "shells.el")
 (load "languages.el")
 
 
