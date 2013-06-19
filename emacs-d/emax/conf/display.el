@@ -49,6 +49,6 @@
 
 (load "headerline.el")
 (load "modeline.el")
-
+(load "popwin-conf.el")
 
 
