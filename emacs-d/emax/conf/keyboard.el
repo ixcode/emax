@@ -11,6 +11,18 @@
 
 (fset 'yes-or-no-p 'y-or-n-p) ;; "y or n" instead of "yes or no"
 
+;; To allow window switching easy:
+(defun select-next-window ()
+  "Switch to the next window"
+  (interactive)
+  (select-window (next-window)))
+
+(defun select-previous-window ()
+  "Switch to the previous window"
+  (interactive)
+  (select-window (previous-window)))
+
+
 (when (eq system-type 'darwin)
   (setq mac-option-key-is-meta nil)
   (setq mac-option-modifier 'alt)
@@ -23,6 +35,13 @@
   (defun insert-pound ()
     (interactive)
     (insert "#"))
+
+  (global-unset-key (kbd "<s-right>")) ;; Was 'ns-next-frame
+  (global-unset-key (kbd "<s-left>"))  ;; Was 'ns-previous-frame
+
+  (global-set-key (kbd "<s-right>") 'select-next-window)
+  (global-set-key (kbd "<s-left>")  'select-previous-window)
+
 
   (global-set-key (kbd "A-3") 'insert-pound) ;; On a uk keyboard, you need to press alt and we have disabled it
 

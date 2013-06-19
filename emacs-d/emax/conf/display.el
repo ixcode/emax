@@ -20,6 +20,13 @@
 (set-default 'indicate-empty-lines t)
 
 
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
+(setq frame-title-format
+  '("" invocation-name ": "(:eval (if (buffer-file-name)
+                (abbreviate-file-name (buffer-file-name))
+                  "%b"))))
 
 
 (global-font-lock-mode 1) ;; allows syntax highlighting to work
