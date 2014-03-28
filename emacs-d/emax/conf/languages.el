@@ -277,3 +277,18 @@
 ;;         (list (point) end)))))
 
 (setq nrepl-port "6678")
+
+
+(when (not (package-installed-p 'yasnippet))
+  (package-install 'yasnippet))
+
+
+;; (when (not (package-installed-p 'angular-snippets))
+;;   (package-install 'angular-snippets))
+
+
+;;(require 'yasnippet)
+;;(yas-global-mode 1)
+
+
+ 

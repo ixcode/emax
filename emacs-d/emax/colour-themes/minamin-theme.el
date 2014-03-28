@@ -1,5 +1,6 @@
 ;; http://www.gnu.org/software/emacs/manual/html_node/elisp/Defining-Faces.html
 ;; Nicked mostly from https://raw.github.com/bbatsov/zenburn-emacs/master/zenburn-theme.el
+;; M-x list-faces-display
 
 (deftheme minamin "Minimal theme with light background")
 
@@ -120,7 +121,10 @@ Also bind `class' to ((class color) (min-colors 89))."
    '(rainbow-delimiters-depth-9-face   ((t (:foreground "#99CCCC"))))
    '(rainbow-delimiters-unmatched-face ((t (:foreground "#FF0000"))))
 
-   '(show-paren-match-face ((t (:foreground "#ff33cc" :background nil :bold t))))
+   '(show-paren-match-face             ((t (:foreground "#ff33cc" :background nil :bold t))))
+
+   ;;'(table-cell                        ((t (:foreground ,minamin-fg))))
+
 
    `(comint-highlight-prompt           ((t (:foreground ,minamin-fg))))
    `(comint-highlight-input            ((t (:foreground ,minamin-grey+3))))
