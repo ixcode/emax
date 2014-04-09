@@ -57,6 +57,8 @@
   (global-set-key (kbd "C-,") 'scroll-down-line)
   (global-set-key (kbd "C-.") 'scroll-up-line)
 
+  (global-set-key (kbd "s-]") 'next-buffer)
+  (global-set-key (kbd "s-[") 'previous-buffer)
 
 
   (global-set-key (kbd "s-r") 'move-to-window-line-top-bottom)
