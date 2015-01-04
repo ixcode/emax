@@ -36,7 +36,8 @@
 
 ;; See here http://batsov.com/articles/2012/02/19/color-theming-in-emacs-reloaded/
 (add-to-list 'custom-theme-load-path "~/.emacs.d/emax/colour-themes")
-(load-theme 'minamin t) 
+(load-theme 'minamin t)
+;;(load-theme 'minamindark t) 
 
 
 (if window-system

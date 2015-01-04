@@ -2,7 +2,8 @@
 (when (not (package-installed-p 'rainbow-delimiters))
   (package-install 'rainbow-delimiters))
 
-(global-rainbow-delimiters-mode)
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 (when (not (package-installed-p 'rainbow-mode))
   (package-install 'rainbow-mode))
@@ -39,17 +40,16 @@
 (when (not (package-installed-p 'tabbar))
   (package-install 'tabbar))
 
+(unless (package-installed-p 'cider)
+  (package-install 'cider))
 
-(when (not (package-installed-p 'nrepl))
-  (package-install 'nrepl))
-
-(add-hook 'nrepl-interaction-mode-hook
-  'nrepl-turn-on-eldoc-mode)
+(add-hook 'cider-interaction-mode-hook
+  'cider-turn-on-eldoc-mode)
 (setq nrepl-popup-stacktraces nil)
-(add-to-list 'same-window-buffer-names "*nrepl*")
-(add-hook 'nrepl-mode-hook 'subword-mode)
-(add-hook 'nrepl-mode-hook 'paredit-mode)
-(add-hook 'nrepl-mode-hook 'rainbow-delimiters-mode)
+(add-to-list 'same-window-buffer-names "*cider*")
+(add-hook 'cider-mode-hook 'subword-mode)
+(add-hook 'cider-mode-hook 'paredit-mode)
+(add-hook 'cider-mode-hook 'rainbow-delimiters-mode)
 
 ;; https://github.com/syohex/emacs-git-gutter
 ;; (when (not (package-installed-p 'git-gutter)) 

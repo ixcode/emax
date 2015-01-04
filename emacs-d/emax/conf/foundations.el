@@ -44,7 +44,7 @@
 
 
 
-(server-start)
+;;(server-start)
 
 (load "ido-conf.el")
 
