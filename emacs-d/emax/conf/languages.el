@@ -1,4 +1,5 @@
 
+
 (when (not (package-installed-p 'rainbow-delimiters))
   (package-install 'rainbow-delimiters))
 
@@ -113,8 +114,12 @@
 
 (require 'sass-mode)
 
+;; On Emacs earlier than 24 can't install like this, need to follow instructions at ;; https://magit.github.io/
+(when (not (package-installed-p 'magit))
+  (package-install 'magit))
 
-(require 'magit) ;; Magit needs to be installed first - try to work out how to only load if present
+
+(require 'magit) 
 
 ;; (require 'lambda-mode)
 ;; (add-hook 'emacs-lisp-mode-hook       (lambda () (lambda-mode)))
