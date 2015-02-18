@@ -33,15 +33,24 @@
 
 
 (defun ssh-shell (input)
-  "…"
-  (interactive "sSSH To: ")
-  (let ((remote-dir (concat "/ssh:" input))) 
-    (message (concat "Opening shell at " remote-dir))
-    (dired remote-dir)
-    (shell (concat "*shell:" (current-user) "@" (current-hostname) "*"))))
+  "You must specify the right string, like user@host: in your input. Notice the colon at the end! thats so if you want to specify a dir you can"
+  (interactive
+   (let ((ssh-path (read-string "SSH To: " nil 'my-history)))     
+                 (let ((remote-dir (concat "/ssh:" ssh-path))) 
+                   (message (concat "Opening shell at " remote-dir))
+                   (dired remote-dir)
+                   (shell (concat "*shell:" (current-user) "@" (current-hostname) "*"))))))
+
+
+(interactive
+           (let ((string (read-string "Foo: " nil 'my-history)))
+             (list (region-beginning) (region-end) string)))
 
 (defun clear-shell ()
   (interactive)  
   (mark-whole-buffer)
   (delete-backward-char)
   (comint-send-input))
+
+
+(stringp  (concat "a" "b"))

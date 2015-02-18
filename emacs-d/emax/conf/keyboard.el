@@ -78,3 +78,11 @@
 
 (global-unset-key (kbd "s-P")) ;; was print buffer
 (global-set-key (kbd "s-P") 'magit-push)
+
+
+(global-unset-key (kbd "M-f")) 
+(global-unset-key (kbd "M-b"))
+
+(global-set-key (kbd "M-f") 'forward-word)
+(global-set-key (kbd "M-b") 'backward-word)
+

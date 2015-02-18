@@ -36,6 +36,8 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/emax/colour-themes")
 ;;(load-theme 'minamin t)
 (load-theme 'zenburn t)
+
+
 ;;(load-theme 'minamindark t) 
 
 (when (eq system-type 'darwin)
@@ -48,7 +50,7 @@
       (set-frame-position (selected-frame) 0 0)))
 
 (require 'linum)
-(global-linum-mode 1)
+;;(global-linum-mode 1)
 (setq linum-format " %4d ")
 
 (when (fboundp 'fringe-mode)
