@@ -40,7 +40,8 @@
                            )))))
 
 (defun valid-buffer ()
-  (and (buffer-file-name)))
+  (and (buffer-file-name)
+       (not (member (buffer-name) '("COMMIT_EDITMSG")))))
 
 (defun sl/display-header ()
   (if (valid-buffer)
