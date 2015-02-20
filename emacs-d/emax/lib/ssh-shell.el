@@ -42,9 +42,6 @@
                    (shell (concat "*shell:" (current-user) "@" (current-hostname) "*"))))))
 
 
-(interactive
-           (let ((string (read-string "Foo: " nil 'my-history)))
-             (list (region-beginning) (region-end) string)))
 
 (defun clear-shell ()
   (interactive)  
@@ -53,4 +50,4 @@
   (comint-send-input))
 
 
-(stringp  (concat "a" "b"))
+

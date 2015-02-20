@@ -56,8 +56,8 @@
 (when (fboundp 'fringe-mode)
   (fringe-mode '(1 . 0))) ;; Fringe widths (left . right) should be in pixels
 
-(set-face-attribute 'fringe nil :background "#3F3F3F" :foreground "#2E2920")
-(set-face-attribute 'linum nil :background "#4e4e4e")
+;;(set-face-attribute 'fringe nil :background "#3F3F3F" :foreground "#2E2920")
+;;(set-face-attribute 'linum nil :background "#4e4e4e")
 
 (load "headerline.el")
 (load "modeline.el")

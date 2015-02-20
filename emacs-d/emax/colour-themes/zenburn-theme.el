@@ -39,10 +39,10 @@
   '(("zenburn-fg+1"     . "#FFFFEF")
     ("zenburn-fg"       . "#DCDCCC")
     ("zenburn-fg-1"     . "#656555")
-    ("zenburn-bg-2"     . "#000000")
-    ("zenburn-bg-1"     . "#2B2B2B")
-    ("zenburn-bg-05"    . "#383838")
-    ("zenburn-bg"       . "#3F3F3F")
+    ("zenburn-bg-2"     . "#000000") ;;000000
+    ("zenburn-bg-1"     . "#000000") ;;2B2B2B
+    ("zenburn-bg-05"    . "#000000") ;;383838
+    ("zenburn-bg"       . "#2B2B2B") ;;3F3F3F
     ("zenburn-bg+05"    . "#494949")
     ("zenburn-bg+1"     . "#4F4F4F")
     ("zenburn-bg+2"     . "#5F5F5F")
@@ -100,7 +100,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(default ((t (:foreground ,zenburn-fg :background ,zenburn-bg))))
    `(cursor ((t (:foreground ,zenburn-fg :background ,zenburn-fg+1))))
    `(escape-glyph ((t (:foreground ,zenburn-yellow :bold t))))
-   `(fringe ((t (:foreground ,zenburn-fg :background ,zenburn-bg+1))))
+   `(fringe ((t (:foreground ,zenburn-fg :background ,zenburn-bg))))
    `(header-line ((t (:foreground ,zenburn-yellow
                                   :background ,zenburn-bg-1
                                   :box (:line-width -1 :style released-button)))))
@@ -592,7 +592,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(ledger-font-reconciler-pending-face ((t (:foreground ,zenburn-orange :weight normal))))
    `(ledger-font-report-clickable-face ((t (:foreground ,zenburn-orange :weight normal))))
 ;;;;; linum-mode
-   `(linum ((t (:foreground ,zenburn-green+2 :background ,zenburn-bg))))
+   `(linum ((t (:foreground ,zenburn-green+2 :background ,zenburn-bg-2))))
 ;;;;; macrostep
    `(macrostep-gensym-1
      ((t (:foreground ,zenburn-green+2 :background ,zenburn-bg-1))))
