@@ -4,7 +4,7 @@
   (defun sl/make-header ()
     ""
     (let* ((sl/full-header (abbreviate-file-name buffer-file-name))
-           (sl/header (file-name-directory sl/full-header))
+           (sl/header (concat " " (file-name-directory sl/full-header)))
            (sl/drop-str "[...]"))
       (if (> (length sl/full-header)
              (window-body-width))
