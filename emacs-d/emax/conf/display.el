@@ -62,5 +62,6 @@
 (load "headerline.el")
 (load "modeline.el")
 (load "popwin-conf.el")
+(global-hl-line-mode)
 
 

@@ -106,7 +106,7 @@ Also bind `class' to ((class color) (min-colors 89))."
                                   :background "#2B2B2B"
                                   :box (:line-width 6 :color "#2B2B2B" :style nil)
                                   :height 140))))
-   `(highlight ((t (:background ,zenburn-bg-05))))
+   `(highlight ((t (:background ,zenburn-orange))))
    `(success ((t (:foreground ,zenburn-green :weight bold))))
    `(warning ((t (:foreground ,zenburn-orange :weight bold))))
 ;;;;; compilation
@@ -150,7 +150,7 @@ Also bind `class' to ((class color) (min-colors 89))."
                       :background "#2B2B2B"
                       :box (:line-width 6 :color "#2B2B2B" :style nil)
                       :height 140))))
-   `(region ((,class (:background ,zenburn-bg-1))
+   `(region ((,class (:background ,zenburn-orange))
              (t :inverse-video t)))
    `(secondary-selection ((t (:background ,zenburn-bg+2))))
    `(trailing-whitespace ((t (:background ,zenburn-red))))
@@ -544,9 +544,9 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(helm-mu-contacts-address-face ((t (:foreground ,zenburn-fg-1 :background ,zenburn-bg))))
    `(helm-mu-contacts-name-face ((t (:foreground ,zenburn-fg :background ,zenburn-bg))))
 ;;;;; hl-line-mode
-   `(hl-line-face ((,class (:background ,zenburn-bg-05))
+   `(hl-line-face ((,class (:background "#222222"))
                    (t :weight bold)))
-   `(hl-line ((,class (:background ,zenburn-bg-05)) ; old emacsen
+   `(hl-line ((,class (:background "#222222")) ; old emacsen
               (t :weight bold)))
 ;;;;; hl-sexp
    `(hl-sexp-face ((,class (:background ,zenburn-bg+1))

@@ -39,11 +39,11 @@
                            ;; :background "red"
                            )))))
 
-  (defun sl/display-header ()
-    (if (buffer-file-name)
-        (setq header-line-format
-              '("" ;; invocation-name
-                (:eval (sl/make-header))))))
+(defun sl/display-header ()
+  (if (buffer-file-name)
+      (setq header-line-format
+            '("" ;; invocation-name
+              (:eval (sl/make-header))))))
 
 
 ;;(sl/display-header)
