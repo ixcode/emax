@@ -34,8 +34,8 @@
     (nrepl-mode . " ηζ")
     (nrepl-interaction-mode . " ηζ")
     ;; Major modes
-    (lisp-interaction-mode . "λ")
-    (clojure-mode . "λ")
+    (lisp-interaction-mode . "ξlisp")
+    (clojure-mode . "Cloλure")
     (EL-mode . "λ")
     (lambda-mode . "")
     (hi-lock-mode . "")
