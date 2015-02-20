@@ -1,3 +1,4 @@
+
 ;;; zenburn-theme.el --- A low contrast color theme for Emacs.
 
 ;; Copyright (C) 2011-2014 Bozhidar Batsov
@@ -42,7 +43,7 @@
     ("zenburn-bg-2"     . "#000000") ;;000000
     ("zenburn-bg-1"     . "#000000") ;;2B2B2B
     ("zenburn-bg-05"    . "#000000") ;;383838
-    ("zenburn-bg"       . "#2B2B2B") ;;3F3F3F
+    ("zenburn-bg"       . "#000000") ;;3F3F3F
     ("zenburn-bg+05"    . "#494949")
     ("zenburn-bg+1"     . "#4F4F4F")
     ("zenburn-bg+2"     . "#5F5F5F")
@@ -102,8 +103,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(escape-glyph ((t (:foreground ,zenburn-yellow :bold t))))
    `(fringe ((t (:foreground ,zenburn-fg :background ,zenburn-bg))))
    `(header-line ((t (:foreground ,zenburn-yellow
-                                  :background ,zenburn-bg-1
-                                  :box (:line-width 6 :color "#000000" :style nil)
+                                  :background "#2B2B2B"
+                                  :box (:line-width 6 :color "#2B2B2B" :style nil)
                                   :height 140))))
    `(highlight ((t (:background ,zenburn-bg-05))))
    `(success ((t (:foreground ,zenburn-green :weight bold))))
@@ -135,18 +136,19 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(lazy-highlight ((t (:foreground ,zenburn-yellow-2 :weight bold :background ,zenburn-bg-05))))
 
    `(menu ((t (:foreground ,zenburn-fg :background ,zenburn-bg))))
-   `(minibuffer-prompt ((t (:foreground ,zenburn-yellow))))
+   `(minibuffer-prompt
+     ((t (:foreground ,zenburn-yellow))))
    `(mode-line
      ((t (:foreground ,zenburn-green+1
-                      :background ,zenburn-bg-1
-                      :box (:line-width 6 :color "#000000" :style nil)
+                      :background "#2B2B2B"
+                      :box (:line-width 6 :color "#2B2B2B" :style nil)
                       :height 140)) 
       )) ;;(t :inverse-video t)
    `(mode-line-buffer-id ((t (:foreground ,zenburn-yellow :weight bold))))
    `(mode-line-inactive
      ((t (:foreground ,zenburn-green-1
-                      :background ,zenburn-bg-05
-                      :box (:line-width 6 :color "#000000" :style nil)
+                      :background "#2B2B2B"
+                      :box (:line-width 6 :color "#2B2B2B" :style nil)
                       :height 140))))
    `(region ((,class (:background ,zenburn-bg-1))
              (t :inverse-video t)))
