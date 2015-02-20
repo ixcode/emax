@@ -1,7 +1,7 @@
 ;;; Settings for the mode line
 
-;; Prevent it having a 3D box
-(set-face-attribute 'mode-line nil :box nil)
+;; The display settings for the modeline should be set in the color theme (see my zenburn version for example)
+
 
 
 ;; Display the time in the mode bar.
@@ -38,7 +38,7 @@
     (lambda-mode . "")
     (hi-lock-mode . "")
     (python-mode . "Py")
-    (emacs-lisp-mode . "EL")
+    (emacs-lisp-mode . "ξlisp")
     (markdown-mode . "md"))
   "Alist for `clean-mode-line'.
 

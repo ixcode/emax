@@ -103,7 +103,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(fringe ((t (:foreground ,zenburn-fg :background ,zenburn-bg))))
    `(header-line ((t (:foreground ,zenburn-yellow
                                   :background ,zenburn-bg-1
-                                  :box (:line-width -1 :style released-button)))))
+                                  :box (:line-width 6 :color "#000000" :style nil)
+                                  :height 140))))
    `(highlight ((t (:background ,zenburn-bg-05))))
    `(success ((t (:foreground ,zenburn-green :weight bold))))
    `(warning ((t (:foreground ,zenburn-orange :weight bold))))
@@ -136,15 +137,17 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(menu ((t (:foreground ,zenburn-fg :background ,zenburn-bg))))
    `(minibuffer-prompt ((t (:foreground ,zenburn-yellow))))
    `(mode-line
-     ((,class (:foreground ,zenburn-green+1
-                           :background ,zenburn-bg-1
-                           :box (:line-width -1 :style released-button)))
-      (t :inverse-video t)))
+     ((t (:foreground ,zenburn-green+1
+                      :background ,zenburn-bg-1
+                      :box (:line-width 6 :color "#000000" :style nil)
+                      :height 140)) 
+      )) ;;(t :inverse-video t)
    `(mode-line-buffer-id ((t (:foreground ,zenburn-yellow :weight bold))))
    `(mode-line-inactive
      ((t (:foreground ,zenburn-green-1
                       :background ,zenburn-bg-05
-                      :box (:line-width -1 :style released-button)))))
+                      :box (:line-width 6 :color "#000000" :style nil)
+                      :height 140))))
    `(region ((,class (:background ,zenburn-bg-1))
              (t :inverse-video t)))
    `(secondary-selection ((t (:background ,zenburn-bg+2))))
