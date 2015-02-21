@@ -160,25 +160,25 @@ want to use in the modeline *in lieu of* the original.")
    "%e "
 
    (:propertize "%b "    face mode-line-filename-face)
-   (:propertize " %4l " face mode-line-position-face)
+   (:eval
+    (cond (buffer-read-only     (propertize "R" 'face 'mode-line-read-only-face))
+          ((buffer-modified-p)  (propertize "+" 'face 'mode-line-modified-face))
+          (t                    (propertize " " 'face 'mode-line-unmodified-face))))
+   (:propertize "%4l " face mode-line-position-face)
    (:eval (propertize "%3c" 'face
                       (if (>= (current-column) 80)
                           'mode-line-80col-face
                         'mode-line-position-face)))
-
-   " [%p]"  
+   " [%p]"
    " [" (:propertize mode-name face mode-line-mode-face) 
    (:eval (propertize (format-mode-line minor-mode-alist) 'face 'mode-line-minor-mode-face))
    (:propertize mode-line-process face mode-line-process-face) "]"
    (vc-mode vc-mode) " "
    emacsclient
    mode-line-misc-info
-   (:eval
-    (cond (buffer-read-only     (propertize "R" 'face 'mode-line-read-only-face))
-          ((buffer-modified-p)  (propertize "+" 'face 'mode-line-modified-face))
-          (t                    (propertize " " 'face 'mode-line-unmodified-face))))
-
    mode-line-end-spaces))
+
+
 
 
 
