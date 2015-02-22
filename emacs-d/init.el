@@ -11,18 +11,8 @@
 (load "shells.el")
 (load "languages.el")
 
-
-(message "[emax] : Emax is happily configured, enjoy.")
-
-
-
-
-
-
-
-
-
 (put 'narrow-to-region 'disabled nil)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -31,6 +21,7 @@
  '(custom-safe-themes
    (quote
     ("6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "e4e97731f52a5237f37ceb2423cb327778c7d3af7dc831788473d4a76bcc9760" default)))
+ '(markdown-command "multimarkdown")
  '(safe-local-variable-values
    (quote
     ((eval when
@@ -44,3 +35,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(message "[emax] : Emax is happily configured, enjoy.")
