@@ -120,7 +120,7 @@ want to use in the modeline *in lieu of* the original.")
 (set-face-attribute 'mode-line-modified-face nil
     :inherit 'mode-line-face
     :foreground "#c82829"
-    :background "#ffffff"
+    ;;:background "#ffffff"
     :box '(:line-width 2 :color "#c82829"))
 (set-face-attribute 'mode-line-unmodified-face nil
     :inherit 'mode-line-face
@@ -158,12 +158,7 @@ want to use in the modeline *in lieu of* the original.")
  mode-line-format
  '(
    "%e "
-
    (:propertize "%b "    face mode-line-filename-face)
-   (:eval
-    (cond (buffer-read-only     (propertize "R" 'face 'mode-line-read-only-face))
-          ((buffer-modified-p)  (propertize "+" 'face 'mode-line-modified-face))
-          (t                    (propertize " " 'face 'mode-line-unmodified-face))))
    (:propertize "%4l " face mode-line-position-face)
    (:eval (propertize "%3c" 'face
                       (if (>= (current-column) 80)
@@ -176,6 +171,10 @@ want to use in the modeline *in lieu of* the original.")
    (vc-mode vc-mode) " "
    emacsclient
    mode-line-misc-info
+   (:eval
+    (cond (buffer-read-only     (propertize "R" 'face 'mode-line-read-only-face))
+          ((buffer-modified-p)  (propertize "+" 'face 'mode-line-modified-face))
+          (t                    (propertize " " 'face 'mode-line-unmodified-face))))   
    mode-line-end-spaces))
 
 
