@@ -65,3 +65,4 @@
 (global-hl-line-mode)
 
 
+(global-visual-line-mode t)

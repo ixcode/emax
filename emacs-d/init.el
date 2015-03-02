@@ -10,6 +10,7 @@
 (load "foundations.el")
 (load "shells.el")
 (load "languages.el")
+(load "journal.el")
 
 (put 'narrow-to-region 'disabled nil)
 
