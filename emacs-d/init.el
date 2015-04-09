@@ -40,4 +40,5 @@
 
 
 (message "[emax] : Emax is happily configured, enjoy.")
-(start-process-shell-command "startup-voice" "startup" "sleep 1;say \"Hello Jim, time to code!\"")
+;;(start-process-shell-command "startup-voice" "startup" "sleep 1;say \"Hello Jim, time to code!\"")
+
