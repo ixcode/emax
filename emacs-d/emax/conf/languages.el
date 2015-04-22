@@ -1,3 +1,16 @@
+
+(when (not (package-installed-p 'graphviz-dot-mode))
+  (package-install 'graphviz-dot-mode))
+
+(require 'graphviz-dot-mode)
+(add-to-list 'auto-mode-alist '("\\.dot$" . graphviz-dot-mode))
+
+;; (when (not (package-installed-p 'dot-mode))
+;;   (package-install 'dot-mode))
+
+;; (require 'dot-mode)
+;; (add-hook 'find-file-hooks 'dot-mode-on)
+
 (when (not (package-installed-p 'yaml-mode))
   (package-install 'yaml-mode))
 
