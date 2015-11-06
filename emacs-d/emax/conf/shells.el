@@ -5,3 +5,5 @@
 
 (eval-after-load 'tramp
   '(vagrant-tramp-enable))
+
+ (require 'multi-term)
