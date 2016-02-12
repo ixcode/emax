@@ -91,9 +91,9 @@
 
 (require 'itail)
 
-(when (not (package-installed-p 'multi-web-mode))
-  (package-install 'multi-web-mode))
-(require 'multi-web-mode)
+
+;;(when (not (package-installed-p 'multi-web-mode))(package-install 'multi-web-mode))
+;;(require 'multi-web-mode)
 
 (when (not (package-installed-p 'haml-mode))
   (package-install 'haml-mode))
@@ -107,12 +107,13 @@
 
 
 
-(setq mweb-default-major-mode 'html-mode)
-(setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
-                  (js-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
-                  (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
-(setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
-(multi-web-global-mode 1)
+;;(setq mweb-default-major-mode 'html-mode)
+
+;; (setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
+;;                   (js-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
+;;                   (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
+;; (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
+;;(multi-web-global-mode 1)
 
 
 
@@ -145,7 +146,7 @@
 ;; (add-hook 'clojure-mode-hook (lambda () (lambda-mode)))
 
 
-(load "pretty-lambda.el")
+;;(load "pretty-lambda.el")
 ;; lambda mode seems to work well 
 ;;(load "eshell.el")
 (load "tidy.el")
@@ -325,6 +326,7 @@
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
@@ -333,3 +335,8 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+(setq web-mode-enable-current-column-highlight t)
+(setq web-mode-engines-alist
+      '(("php" . "\\.php\\'")
+        ("blade"  . "\\.blade\\.")
+        ("django" . "\\.html\\'")))
