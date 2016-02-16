@@ -42,6 +42,8 @@
 
 (setq resize-mini-windows nil) ;; Stop the minibuffer from resizing all the time
 
+;;http://emacsformacosx.com/tips
+;;(x-focus-frame nil)
 
 
 ;;(server-start)

@@ -1,8 +1,4 @@
 
-
-(tool-bar-mode -1) ;; hide the toolbar
-(scroll-bar-mode -1)
-
 ;; Only want to do this if running in the terminal (menu-bar-mode -1) ;; hide the menubar
 
 (show-paren-mode) ;; Highlight matching parentheses
@@ -31,31 +27,10 @@
 
 (global-font-lock-mode 1) ;; allows syntax highlighting to work
 
-;; (when (not (package-installed-p 'color-theme-solarized))
-;;   (package-install 'color-theme-solarized))
+;;https://stackoverflow.com/questions/5795451/how-to-detect-that-emacs-is-in-terminal-mode
 
-;;(require 'color-theme-solarized)
+       
 
-;; See here http://batsov.com/articles/2012/02/19/color-theming-in-emacs-reloaded/
-(add-to-list 'custom-theme-load-path "~/.emacs.d/emax/colour-themes")
-;;(load-theme 'minamin t)
-(load-theme 'zenburn t)
-;;(load-theme 'solarized t)
-
-;;(load-theme 'minamindark t) 
-
-(when (eq system-type 'darwin)
-  (set-default-font "-apple-Monaco-medium-normal-normal-*-14-*-*-*-m-0-iso10646-1"))
-
-
-(if window-system
-    (progn
-      (set-frame-size (selected-frame) 179 47)
-      (set-frame-position (selected-frame) 0 0)))
-
-(require 'linum)
-;;(global-linum-mode 1)
-(setq linum-format " %4d ")
 
 (when (fboundp 'fringe-mode)
   (fringe-mode '(1 . 0))) ;; Fringe widths (left . right) should be in pixels
@@ -66,7 +41,10 @@
 (load "headerline.el")
 (load "modeline.el")
 (load "popwin-conf.el")
-(global-hl-line-mode)
 
 
-(global-visual-line-mode t)
+
+
+(if (display-graphic-p)
+    (load "gui-display.el")
+  (load "terminal-display.el"))
