@@ -1,3 +1,4 @@
+
 (message "Running in GUI display mode")
 
 (load "themes.el")
@@ -15,6 +16,6 @@
   (tool-bar-mode -1) ;; hide the toolbar
   (scroll-bar-mode -1))
 
-(global-hl-line-mode)
+;;(global-hl-line-mode)
 
 (global-visual-line-mode t)

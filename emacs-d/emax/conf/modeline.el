@@ -1,4 +1,4 @@
-;;; Settings for the mode line
+;; Settings for the mode line
 
 ;; The display settings for the modeline should be set in the color theme (see my zenburn version for example)
 
@@ -164,13 +164,14 @@ want to use in the modeline *in lieu of* the original.")
                       (if (>= (current-column) 80)
                           'mode-line-80col-face
                         'mode-line-position-face)))
-   " [%p]"
+   " [%p] "
+   emacsclient
+   mode-line-misc-info
    " [" (:propertize mode-name face mode-line-mode-face) 
    (:eval (propertize (format-mode-line minor-mode-alist) 'face 'mode-line-minor-mode-face))
    (:propertize mode-line-process face mode-line-process-face) "]"
    (vc-mode vc-mode) " "
-   emacsclient
-   mode-line-misc-info
+   
    (:eval
     (cond (buffer-read-only     (propertize "R" 'face 'mode-line-read-only-face))
           ((buffer-modified-p)  (propertize "+" 'face 'mode-line-modified-face))

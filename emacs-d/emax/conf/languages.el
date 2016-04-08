@@ -171,6 +171,9 @@
 (load "fuzzy.el")
 (require 'fuzzy)
 
+(when (not (package-installed-p 'auto-complete))
+  (package-install 'auto-complete))
+
 
 ;;(add-to-list 'load-path "~/.emacs.d/auto-complete")
 ;;(load "auto-complete.el")
@@ -181,24 +184,28 @@
 
 ;;(setq ac-comphist-file (concat "~/tmp/" "ac-comphist.dat"))
 
-;;(global-auto-complete-mode t)
-;; (setq ac-auto-show-menu t)
-;; (setq ac-dwim t)
-;; (setq ac-use-menu-map t)
-;; (setq ac-use-quick-help t)
-;; (setq ac-quick-help-delay 1)
-;; (setq ac-quick-help-height 60)
-;; (setq ac-disable-inline t)
-;; (setq ac-show-menu-immediately-on-auto-complete t)
-;; (setq ac-auto-start 2)
-;; (setq ac-candidate-menu-min 0)
+(require 'auto-complete)
+(global-auto-complete-mode t)
+(setq ac-auto-show-menu t)
+(setq ac-dwim t)
+(setq ac-use-menu-map t)
+(setq ac-use-quick-help t)
+(setq ac-quick-help-delay 1)
+(setq ac-quick-help-height 60)
+(setq ac-disable-inline t)
+(setq ac-show-menu-immediately-on-auto-complete t)
+(setq ac-auto-start 2)
+(setq ac-candidate-menu-min 0)
 
-;; (set-default 'ac-sources
-;;              '(ac-source-dictionary
-;;                ac-source-words-in-buffer
-;;                ac-source-words-in-same-mode-buffers
-;;                ac-source-semantic
-;;                ac-source-yasnippet))
+
+
+(set-default 'ac-sources
+             '(ac-source-dictionary
+               ac-source-words-in-buffer
+               ac-source-words-in-same-mode-buffers
+               ac-source-semantic
+               ac-source-yasnippet))
+
 
 ;; (when (not (package-installed-p 'ac-nrepl))
 ;;   (package-install 'ac-nrepl))
@@ -305,6 +312,8 @@
 (when (not (package-installed-p 'yasnippet))
   (package-install 'yasnippet))
 
+(when (not (package-installed-p 'go-mode))
+  (package-install 'go-mode))
 
 ;; (when (not (package-installed-p 'angular-snippets))
 ;;   (package-install 'angular-snippets))
@@ -340,3 +349,9 @@
       '(("php" . "\\.php\\'")
         ("blade"  . "\\.blade\\.")
         ("django" . "\\.html\\'")))
+
+
+(when (not (package-installed-p 'flycheck))
+  (package-install 'flycheck))
+
+(global-flycheck-mode)

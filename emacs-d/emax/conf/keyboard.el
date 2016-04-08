@@ -1,3 +1,5 @@
+;;;; Package -- Summary
+
 ;; This keyboard layout is focused on the core of editing on a mac
 ;; Therefore it prioritises mac familiar key shortcuts.
 
@@ -22,7 +24,7 @@
   (interactive)
   (select-window (previous-window)))
 
-
+;; https://www.emacswiki.org/emacs/EmacsForMacOS
 (when (eq system-type 'darwin)
   (setq mac-option-key-is-meta nil)
   (setq mac-option-modifier 'alt)

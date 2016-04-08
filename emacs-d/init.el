@@ -15,6 +15,7 @@
 (message "Languages loaded ok.")
 (load "journal.el")
 (message "Journal loaded ok.")
+(load "writing.el")
 
 (put 'narrow-to-region 'disabled nil)
 
