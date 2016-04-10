@@ -12,3 +12,5 @@ tramp
 recentf
 ido.last
 *~
+*/.python-environments
+ac-comphist.dat
