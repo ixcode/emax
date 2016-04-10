@@ -11,6 +11,9 @@
 
 ;;(load-theme 'minamindark t) 
 
-(when (eq system-type 'darwin)
-  (set-default-font "-apple-Monaco-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1"))
+
+;; (when (eq system-type 'darwin)
+;;   (set-default-font "-apple-Monaco-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1"))
+
+(setq-default line-spacing 4)
 

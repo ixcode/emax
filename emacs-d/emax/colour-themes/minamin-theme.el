@@ -26,7 +26,7 @@
     ("minamin-red-4"      . "#8C5353")
     ("minamin-orange"     . "#DFAF8F") 
     ("minamin-yellow"     . "#F0DFAF")
-    ("minamin-yellow-1"   . "#E0CF9F")
+    ("minamin-yellow-1"   . "#813a01")
     ("minamin-yellow-2"   . "#D0BF8F")
     ("minamin-green-1"    . "#5F7F5F")
     ("minamin-green"      . "#7F9F7F")
@@ -143,7 +143,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    ;; (setq ansi-color-names-vector
    ;;       ["black" "red" "green" "yellow" "PaleBlue" "magenta" "cyan" "white"])
 
-   `(ansi-color-names-vector [,minamin-bg-light ,minamin-red , minamin-green-1 ,"yellow" 
+   `(ansi-color-names-vector [,minamin-bg-light ,minamin-red , minamin-green-1 ,minamin-yellow-1
                               ,"blue" ,minamin-magenta ,minamin-cyan ,minamin-fg])
 
 ;;;;; fill-column-indicator

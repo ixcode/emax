@@ -25,12 +25,13 @@
   (select-window (previous-window)))
 
 ;; https://www.emacswiki.org/emacs/EmacsForMacOS
+;; 
 (when (eq system-type 'darwin)
-  (setq mac-option-key-is-meta nil)
-  (setq mac-option-modifier 'alt)
+;;  (setq mac-option-key-is-meta t)
+  (setq mac-option-modifier 'meta)
   (setq mac-right-option-modifier 'meta)
 
-  (setq mac-command-key-is-meta nil)
+;;  (setq mac-command-key-is-meta nil)
   (setq mac-command-modifier 'super)
   (setq mac-right-command-modifier 'super)
 
@@ -51,8 +52,8 @@
   (global-set-key (kbd "M-3") 'insert-pound) ;; On a uk keyboard, you need to press alt and we have disabled it
 
   ;; These rebind the cmd key where possible - they usually use meta but its easier to hit cmd
-  (global-set-key (kbd "s-<") 'beginning-of-buffer)
-  (global-set-key (kbd "s->") 'end-of-buffer)
+;;  (global-set-key (kbd "s-<") 'beginning-of-buffer)
+;;  (global-set-key (kbd "s->") 'end-of-buffer)
 
   (global-set-key (kbd "s-/") 'dabbrev-expand)
 
