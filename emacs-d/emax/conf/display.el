@@ -35,7 +35,6 @@
 (when (fboundp 'fringe-mode)
   (fringe-mode '(1 . 0))) ;; Fringe widths (left . right) should be in pixels
 
-(set-face-attribute 'fringe nil :background "#fffff5" :foreground "#2E2920")
 ;;(set-face-attribute 'linum nil :background "#4e4e4e")
 
 (load "headerline.el")
@@ -43,6 +42,7 @@
 (load "popwin-conf.el")
 
 
+(set-face-attribute 'fringe nil :background "#fffff5" :foreground "#2E2920")
 
 
 (if (display-graphic-p)

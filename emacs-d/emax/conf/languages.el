@@ -91,6 +91,13 @@
 
 (require 'itail)
 
+(when (not (package-installed-p 'jedi))
+  (package-install 'jedi))
+
+(require 'jedi)
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)                 ; optional
+
 
 ;;(when (not (package-installed-p 'multi-web-mode))(package-install 'multi-web-mode))
 ;;(require 'multi-web-mode)
@@ -174,13 +181,12 @@
 (when (not (package-installed-p 'auto-complete))
   (package-install 'auto-complete))
 
+(add-to-list 'load-path "~/.emacs.d/auto-complete")
+(load "auto-complete.el")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
 
-;;(add-to-list 'load-path "~/.emacs.d/auto-complete")
-;;(load "auto-complete.el")
-;;(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
-
-;;(require 'auto-complete-config)
-;;(ac-config-default)
+(require 'auto-complete-config)
+(ac-config-default)
 
 ;;(setq ac-comphist-file (concat "~/tmp/" "ac-comphist.dat"))
 

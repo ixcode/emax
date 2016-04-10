@@ -11,6 +11,8 @@
 
 ;;(load-theme 'minamindark t) 
 
+(set-face-attribute 'fringe nil :background "#fffff5" :foreground "#2E2920")
+
 
 ;; (when (eq system-type 'darwin)
 ;;   (set-default-font "-apple-Monaco-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1"))
