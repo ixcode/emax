@@ -1,4 +1,8 @@
 
+(when (not (package-installed-p 'find-file-in-project))
+  (package-install 'find-file-in-project))
+
+
 (when (not (package-installed-p 'graphviz-dot-mode))
   (package-install 'graphviz-dot-mode))
 
@@ -360,4 +364,9 @@
 (when (not (package-installed-p 'flycheck))
   (package-install 'flycheck))
 
+(require 'sws-mode)
+(require 'jade-mode)
+(add-to-list 'auto-mode-alist '("\\.styl\\'" . sws-mode))
+
 (global-flycheck-mode)
+

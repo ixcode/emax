@@ -216,3 +216,5 @@ This requires library `rainbow-mode'.")
 ;;(set-face-background 'ac-selection-face "#777777")
 
 
+(setq ansi-color-names-vector
+   ["black" "red" "green" minamin-yellow-2 "PaleBlue" "magenta" "cyan" "white"])

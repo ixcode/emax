@@ -7,3 +7,6 @@
   '(vagrant-tramp-enable))
 
  (require 'multi-term)
+
+;;(when (not (package-installed-p 'top-mode))
+;;  (package-install 'top-mode))
