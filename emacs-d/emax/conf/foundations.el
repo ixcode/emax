@@ -3,9 +3,9 @@
 
 
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
-			 ("gnu" . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://stable.melpa.org/packages/")))
+		 ("gnu" . "http://elpa.gnu.org/packages/")
+		 ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
 
 (package-initialize)
 ; fetch the list of packages available 

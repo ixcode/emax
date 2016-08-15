@@ -2,6 +2,10 @@
 (when (not (package-installed-p 'find-file-in-project))
   (package-install 'find-file-in-project))
 
+(when (not (package-installed-p 'solidity-mode))
+  (package-install 'solidity-mode))
+
+(require 'solidity-mode)
 
 (when (not (package-installed-p 'graphviz-dot-mode))
   (package-install 'graphviz-dot-mode))
