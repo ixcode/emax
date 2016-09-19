@@ -1,3 +1,46 @@
+;;; languages.el --- Sets up useful things for programming
+
+;;; Commentary:
+;; See http://shallowsky.com/blog/linux/editors/emacs-tab-separated-files.html
+
+;;; Code:
+(when (not (package-installed-p 'docker))
+  (package-install 'docker))
+
+(when (not (package-installed-p 'csv-mode))
+  (package-install 'csv-mode))
+
+(add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
+;;(add-to-list 'auto-mode-alist '("\\.[Tt][Ss][Vv]\\'" . csv-mode))
+(autoload 'csv-mode "csv-mode"
+  "Major mode for editing comma-separated value files." t)
+
+;; This is a bit hacky as it will only work when you load so if you switch between file types it won't work.
+;; (defun csv-mode-setup-filetype ()
+  
+;;   (when (string= (file-name-extension buffer-file-name) "csv")
+;;     (setq csv-separators '(","))    
+;;     (message "Trying to setup csv-mode to use commas"))
+;;   (when (string= (file-name-extension buffer-file-name) "tsv")
+;;     (setq csv-separators '("\t"))    
+;;     (message "Trying to setup csv-mode to use tabs")))
+
+;; (add-hook 'csv-mode-hook 'csv-mode-setup-filetype)
+
+;;(setq csv-separators '("\t"))
+
+;; Extended from http://shallowsky.com/blog/linux/editors/emacs-tab-separated-files.html
+;; (define-derived-mode tabbed-mode csv-mode "TSV"
+;;   (setq-local csv-separators '("\t"))
+;;   (local-set-key (kbd "TAB") 'self-insert-command))
+
+(autoload 'tsv-mode "tsv-mode"
+  "Major mode for editing tab-separated value files." t)
+
+
+;;(add-to-list 'auto-mode-alist '("\\.[Tt][Ss][Vv]\\'" . tsv-mode))
+;;(autoload 'tsv-mode "tsv-mode" "A mode to edit table like file" t)
+;;(autoload 'tsv-normal-mode "tsv-mode" "A minor mode to edit table like file" t)
 
 (when (not (package-installed-p 'find-file-in-project))
   (package-install 'find-file-in-project))
