@@ -16,8 +16,11 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
 
+;; http://stackoverflow.com/questions/13763912/emacs-how-to-change-some-colors-in-m-x-shell
+
 ;;(ansi-color-names-vector [,minamin-bg-light ,minamin-red , minamin-green-1 ,minamin-yellow-1 ,"blue" ,minamin-magenta ,minamin-blue+1 ,minamin-fg])
 
+;; Need to work out how to do this in the theme
 (defun refresh-shell-colors ()
   (setq ansi-color-names-vector
    ["#fffff5" "#cc0000" "#8FB28F" "#813a01" "#271aff" "#6622CC" "#1a87ff" "#333c4e"])
