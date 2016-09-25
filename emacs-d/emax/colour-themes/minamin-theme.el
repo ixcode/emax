@@ -217,4 +217,4 @@ This requires library `rainbow-mode'.")
 
 
 (setq ansi-color-names-vector
-   ["black" "red" "green" minamin-yellow-2 "PaleBlue" "magenta" "cyan" "white"])
+   ["black" "red" "green" "#813a01" "PaleBlue" "magenta" "cyan" "white"])

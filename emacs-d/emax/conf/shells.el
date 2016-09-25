@@ -16,6 +16,17 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
 
+;;(ansi-color-names-vector [,minamin-bg-light ,minamin-red , minamin-green-1 ,minamin-yellow-1 ,"blue" ,minamin-magenta ,minamin-blue+1 ,minamin-fg])
+
+(defun refresh-shell-colors ()
+  (setq ansi-color-names-vector
+   ["#fffff5" "#cc0000" "#8FB28F" "#813a01" "#271aff" "#6622CC" "#1a87ff" "#333c4e"])
+  (setq ansi-color-map (ansi-color-make-color-map))
+  (message "Have reset ansi colors"))
+
+(add-hook 'shell-mode-hook 'refresh-shell-colors)
+;;(setq ansi-color-map (ansi-color-make-color-map))
+
 ;; Filter out dogy characters
 ;; https://oleksandrmanzyuk.wordpress.com/2011/11/05/better-emacs-shell-part-i/
 (defun preamble-regexp-alternatives (regexps)
