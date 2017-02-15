@@ -49,8 +49,8 @@
 (load "ido-conf.el")
 
 ;; Use spaces instead of tab
-(setq-default indent-tabs-mode t) ;; Can put nil if want spaces instead of tabs
-(setq default-tab-width 12)
+(setq-default indent-tabs-mode nil) ;; Can put nil or t if want spaces instead of tabs
+(setq tab-width 4)
 ;; need to work out how to turn off tabs mode for everything except tsv files
 (autoload 'tsv-mode "tsv-mode" "A mode to edit table like file" t)
 (autoload 'tsv-normal-mode "tsv-mode" "A minor mode to edit table like file" t)

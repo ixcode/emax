@@ -40,4 +40,6 @@
 ;; http://emax.ixcode.org
 ;; http://github.com/ixcode/emax
 ;; 
+;; We are a software company and a community of passionate, purpose-led individuals. We think disruptively to deliver technology to address our clients' toughest challenges, all ;; while seeking to revolutionize the IT industry and create positive social change.
+;;
 ;; ")

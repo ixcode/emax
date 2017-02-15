@@ -16,6 +16,8 @@
 (load "journal.el")
 (message "Journal loaded ok.")
 (load "writing.el")
+(load "irc.el")
+(load "web.el")
 
 (put 'narrow-to-region 'disabled nil)
 

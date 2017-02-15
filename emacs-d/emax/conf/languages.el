@@ -420,4 +420,7 @@
 (require 'nodejs-repl)
 
 
+(require 'kotlin-mode)
 
+(provide 'languages)
+;;; languages.el ends here
