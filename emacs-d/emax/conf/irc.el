@@ -15,7 +15,7 @@
 
 (erc-autojoin-mode t)
 (setq erc-autojoin-channels-alist
-  '((".*\\.freenode.net" "#emacs")
+  '((".*\\.freenode.net" "#emacs" "#thoughtworks")
      ("irc.dyne.org" "#decode")))
 
 ;; check channels

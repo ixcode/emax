@@ -147,7 +147,7 @@
     (switch-to-buffer-other-window old-buf)))
 
 (define-key cider-mode-map
-    (kbd "C-c C-i") #'incanter-eval-and-display-chart)
+    (kbd "C-c C-") #'incanter-eval-and-display-chart)
 
 (add-hook 'cider-interaction-mode-hook
           'cider-turn-on-eldoc-mode)
