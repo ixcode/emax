@@ -1,3 +1,9 @@
+;;; package --- Summary
+;; Provides entry point when comfiguring in the ui
+;;; Commentary:
+
+
+;;; Code:
 
 ;; Only want to do this if running in the terminal (menu-bar-mode -1) ;; hide the menubar
 

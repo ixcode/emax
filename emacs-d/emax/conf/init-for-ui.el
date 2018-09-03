@@ -1,20 +1,44 @@
 ;;; package --- Summary
-;; Provides entry point to the emax config system
+;; Provides entry point when comfiguring in the ui
 ;;; Commentary:
 
+
 ;;; Code:
-(message "[emax] : This is the start of something beautiful...")
+(message "Configuring EMAX in UI mode")
 
-(add-to-list 'load-path "~/.emacs.d/emax/lib")
-(add-to-list 'load-path "~/.emacs.d/emax/conf")
+(require 'package)
 
-(if (display-graphic-p)
-  (load "init-for-ui")
-  (load "init-for-terminal"))
+(load "startup-message.el")
+(load "keyboard.el")
+(load "display.el")
 
-(provide 'init)
-;;; init.el ends here
+(load "foundations.el")
+(message "Foundations loaded ok.")
 
+(load "shells.el")
+(message "Shells loaded ok.")
+
+;;(load "languages.el")
+(message "Languages loaded ok.")
+
+(load "journal.el")
+(message "Journal loaded ok.")
+
+(load "writing.el")
+(load "irc.el")
+(load "web.el")
+
+(put 'narrow-to-region 'disabled nil)
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(message "[emax] : Emax is happily configured, enjoy.")
+;;(start-process-shell-command "startup-voice" "startup" "sleep 1;say \"Hello Jim, time to code!\"")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -27,9 +51,6 @@
    (quote
     ("bd3a84a9cd58d5d5c9f7f71bc0317634a7d4fe17b5523403203ac4894a105e72" default)))
  '(fci-rule-color "#ecece0")
- '(package-selected-packages
-   (quote
-    (google-this ebib yasnippet yaml-mode web-mode vagrant-tramp tabbar solidity-mode slim-mode sass-mode rainbow-mode rainbow-delimiters paredit nav markdown-preview-mode magit jedi itail ido-ubiquitous graphviz-dot-mode go-mode flycheck find-file-in-project doom-themes docker csv-mode cider)))
  '(vc-annotate-background "#fffff5")
  '(vc-annotate-color-map
    (quote
@@ -52,9 +73,6 @@
      (340 . "#1a87ff")
      (360 . "#6622CC"))))
  '(vc-annotate-very-old-color "#6622CC"))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
+(provide 'init-for-ui)
+;;; init-for-ui.el ends here

@@ -13,65 +13,32 @@
 
 (fset 'yes-or-no-p 'y-or-n-p) ;; "y or n" instead of "yes or no"
 
+
+
+;; https://www.emacswiki.org/emacs/EmacsForMacOS
+;; sets up some os x specific mappings
+(if (eq system-type 'darwin)
+    (load "keyboard-mac-ui.el"))
+
+
 ;; To allow window switching easy:
 (defun select-next-window ()
-  "Switch to the next window"
+  "Switch to the next window."
   (interactive)
   (select-window (next-window)))
 
 (defun select-previous-window ()
-  "Switch to the previous window"
+  "Switch to the previous window."
   (interactive)
   (select-window (previous-window)))
 
-;; https://www.emacswiki.org/emacs/EmacsForMacOS
-;; 
-(when (eq system-type 'darwin)
-;;  (setq mac-option-key-is-meta t)
-  (setq mac-option-modifier 'meta)
-  (setq mac-right-option-modifier 'meta)
+(global-unset-key (kbd "<s-right>")) ;; Was 'ns-next-frame
+(global-unset-key (kbd "<s-left>"))  ;; Was 'ns-previous-frame
 
-;;  (setq mac-command-key-is-meta nil)
-  (setq mac-command-modifier 'super)
-  (setq mac-right-command-modifier 'super)
+(global-set-key (kbd "<s-right>") 'select-next-window)
+(global-set-key (kbd "<s-left>")  'select-previous-window)
 
-  (defun insert-pound ()
-    (interactive)
-    (insert "#"))
-
-  (global-unset-key (kbd "<s-right>")) ;; Was 'ns-next-frame
-  (global-unset-key (kbd "<s-left>"))  ;; Was 'ns-previous-frame
-
-  (global-set-key (kbd "<s-right>") 'select-next-window)
-  (global-set-key (kbd "<s-left>")  'select-previous-window)
-
-
-  (global-set-key (kbd "A-3") 'insert-pound) ;; On a uk keyboard, you need to press alt and we have disabled it
-
-  (global-unset-key (kbd "M-3")) ;; Was 'digit-argument but I don't often use it whereas pound is always used. An alternative would be M-£ but then it wouldn't be the same in other apps
-  (global-set-key (kbd "M-3") 'insert-pound) ;; On a uk keyboard, you need to press alt and we have disabled it
-
-  ;; These rebind the cmd key where possible - they usually use meta but its easier to hit cmd
-;;  (global-set-key (kbd "s-<") 'beginning-of-buffer)
-;;  (global-set-key (kbd "s->") 'end-of-buffer)
-
-  (global-set-key (kbd "s-/") 'dabbrev-expand)
-
-  (global-set-key (kbd "C-,") 'scroll-down-line)
-  (global-set-key (kbd "C-.") 'scroll-up-line)
-
-  (global-set-key (kbd "s-]") 'next-buffer)
-  (global-set-key (kbd "s-[") 'previous-buffer)
-
-
-  (global-set-key (kbd "s-r") 'move-to-window-line-top-bottom)
-
-  (global-set-key (kbd "C-s-/") 'indent-region)
-
-
-  (setq org-support-shift-select t))
-
-  (add-hook 'shell-mode
+(add-hook 'shell-mode
           (lambda ()
             (local-set-key (kbd "A-p") 'comint-previous-input)
             (local-set-key (kbd "A-n") 'comint-next-input)

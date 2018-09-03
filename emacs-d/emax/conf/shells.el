@@ -21,9 +21,13 @@
 ;;(ansi-color-names-vector [,minamin-bg-light ,minamin-red , minamin-green-1 ,minamin-yellow-1 ,"blue" ,minamin-magenta ,minamin-blue+1 ,minamin-fg])
 
 ;; Need to work out how to do this in the theme
+
+;; Also need to change it based on the theme
+;; ["#fffff5" "#cc0000" "#8FB28F" "#813a01" "#271aff" "#6622CC" "#1a87ff" "#333c4e"] ;; this is for light mode
+;; ["black" "red" "green" "yellow" "PaleBlue" "magenta" "cyan" "white"] ;; This is the default
 (defun refresh-shell-colors ()
   (setq ansi-color-names-vector
-   ["#fffff5" "#cc0000" "#8FB28F" "#813a01" "#271aff" "#6622CC" "#1a87ff" "#333c4e"])
+   ["#3B425" "#C16069" "#A2BF8A" "#ECCC87" "#80A0C2" "#B58DAE" "#86C0D1" "#f0f0f0"]) ;; these are nord colors
   (setq ansi-color-map (ansi-color-make-color-map))
   (message "Have reset ansi colors"))
 

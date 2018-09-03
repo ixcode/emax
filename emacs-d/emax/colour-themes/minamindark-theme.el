@@ -2,13 +2,15 @@
 ;; Nicked mostly from https://raw.github.com/bbatsov/zenburn-emacs/master/zenburn-theme.el
 ;; M-x list-faces-display
 
+;; Also now mostly from doom-nord and the nord themes
+
 (deftheme minamindark "Minimal theme with dark background")
 
-(makunbound 'minamin-colors-alist)
-(defvar minamin-colors-alist
-  '(("minamin-fg"         . "#333c4e")
-    ("minamin-bg-light"   . "#fffff5")
-    ("minamin-bg-light-1" . "#ecece0")
+(makunbound 'minamindark-colors-alist)
+(defvar minamindark-colors-alist
+  '(("minamin-fg"         . "#ECEFF4")
+    ("minamin-bg-light"   . "#2C333F")
+    ("minamin-bg-light-1" . "#2E3440")
     ("minamin-purple"     . "#6622CC") 
     ("minamin-grey-2"     . "#2B2B2B")
     ("minamin-grey-1"     . "#383838")
@@ -42,21 +44,38 @@
     ("minamin-blue-3"     . "#0c00cc")
     ("minamin-blue-4"     . "#0b00b2")
     ("minamin-blue-5"     . "#08007f")
-    ("minamin-magenta"    . "#6622CC"))
+    ("minamin-magenta"    . "#6622CC")
+
+    ;; From doom-nord
+    ("nord-grey"               . "#434C5E")
+    ("nord-red"                . "#C16069")
+    ("nord-orange"             . "#D2876D")
+    ("nord-green"              . "#A2BF8A")
+    ("nord-teal"               . "#8EBCBB")
+    ("nord-yellow"             . "#ECCC87")
+    ("nord-blue"               . "#80A0C2")
+    ("nord-dark-blue"          . "#5C748E")
+    ("nord-magenta"            . "#B58DAE")
+    ("nord-violet"             . "#a9a1e1")
+    ("nord-cyan"               . "#86C0D1")
+    ("nord-dark-cyan"          . "#507681")
+
+
+    )
   "List of minamin colors.
 Each element has the form (NAME . HEX).
 
 `+N' suffixes indicate a color is lighter.
 `-N' suffixes indicate a color is darker.")
 
-(defmacro minamin-with-color-variables (&rest body)
-  "`let' bind all colors defined in `minamin-colors-alist'.
+(defmacro minamindark-with-color-variables (&rest body)
+  "`let' bind all colors defined in `minamindark-colors-alist'.
 Also bind `class' to ((class color) (min-colors 89))."
   (declare (indent 0))
   `(let ((class '((class color) (min-colors 89)))
          ,@(mapcar (lambda (cons)
                      (list (intern (car cons)) (cdr cons)))
-                   minamin-colors-alist))
+                   minamindark-colors-alist))
      ,@body))
 
 (defmacro theme-faces (theme-name)
@@ -64,9 +83,9 @@ Also bind `class' to ((class color) (min-colors 89))."
     '@theme-name
     ))
 
-(minamin-with-color-variables
+(minamindark-with-color-variables
  (custom-theme-set-faces
-  'minamin
+  'minamindark
   `(default      ((t (:foreground ,minamin-fg :background , minamin-bg-light))))
   `(cursor       ((t (:foreground ,minamin-purple :background,  minamin-bg-light))))
   `(cursor-color ((t (:foreground ,minamin-purple :background,  minamin-bg-light))))
@@ -92,19 +111,19 @@ Also bind `class' to ((class color) (min-colors 89))."
   `(region      ((t (:background ,minamin-yellow))))
 
    ;;;; font lock
-   `(font-lock-builtin-face           ((t (:foreground ,minamin-blue-4))))
+   `(font-lock-builtin-face           ((t (:foreground ,nord-teal))))
    `(font-lock-comment-face           ((t (:foreground ,minamin-grey+3))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,minamin-grey+3))))
-   `(font-lock-constant-face          ((t (:foreground ,minamin-blue-4))))
+   `(font-lock-constant-face          ((t (:foreground ,nord-magenta))))
    `(font-lock-doc-face               ((t (:foreground ,minamin-green))))
    `(font-lock-doc-string-face        ((t (:foreground ,minamin-green))))
-   `(font-lock-function-name-face     ((t (:foreground ,minamin-grey+1))))
-   `(font-lock-keyword-face           ((t (:foreground ,minamin-blue-4))))
+   `(font-lock-function-name-face     ((t (:foreground ,nord-teal))))
+   `(font-lock-keyword-face           ((t (:foreground ,nord-blue))))
    `(font-lock-negation-char-face     ((t (:foreground ,minamin-fg))))
    `(font-lock-preprocessor-face      ((t (:foreground ,minamin-grey+3))))
    `(font-lock-string-face            ((t (:foreground ,minamin-green+2))))
-   `(font-lock-type-face              ((t (:foreground ,minamin-fg))))
-   `(font-lock-variable-name-face     ((t (:foreground ,minamin-fg))))
+   `(font-lock-type-face              ((t (:foreground ,nord-yellow))))
+   `(font-lock-variable-name-face     ((t (:foreground ,nord-magenta))))
    `(font-lock-warning-face           ((t (:foreground ,minamin-fg))))
 
    `(magit-branch                     ((t (:foreground ,minamin-fg :background,minamin-bg-light :box nil))))
@@ -135,7 +154,9 @@ Also bind `class' to ((class color) (min-colors 89))."
 
 ;; The shell...
 
-(minamin-with-color-variables
+(setq ansi-color-names-vector [minamin-bg ,nord-red , minamin-green-1 ,nord-yellow 
+                              ,nord-blue ,nord-magenta ,minamin-cyan ,minamin-fg])
+(minamindark-with-color-variables
   (custom-theme-set-variables
    'minamindark
 ;;;;; ansi-color
@@ -143,8 +164,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    ;; (setq ansi-color-names-vector
    ;;       ["black" "red" "green" "yellow" "PaleBlue" "magenta" "cyan" "white"])
 
-   `(ansi-color-names-vector [,minamin-bg-light ,minamin-red , minamin-green-1 ,"yellow" 
-                              ,"blue" ,minamin-magenta ,minamin-cyan ,minamin-fg])
+   '(ansi-color-names-vector [minamin-bg ,nord-red , minamin-green-1 ,nord-yellow 
+                              ,nord-blue ,nord-magenta ,minamin-cyan ,minamin-fg])
 
 ;;;;; fill-column-indicator
    `(fci-rule-color ,minamin-bg-light-1)

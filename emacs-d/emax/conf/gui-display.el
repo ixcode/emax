@@ -1,11 +1,18 @@
+;;; package --- Summary
+;; Provides entry point when comfiguring in the ui
+;;; Commentary:
 
+
+;;; Code:
 (message "Running in GUI display mode")
 
 (load "themes.el")
 
+(set-default-font "Menlo 15")
+
 (if window-system
     (progn
-      (set-frame-size (selected-frame) 179 47)
+      (set-frame-size (selected-frame) 130 47)
       (set-frame-position (selected-frame) 0 0)))
 
 (require 'linum)
