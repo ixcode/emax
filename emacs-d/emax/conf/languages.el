@@ -200,6 +200,18 @@
   (package-install 'slim-mode))
 (require 'slim-mode)
 
+(when (not (package-installed-p 'lua-mode))
+  (package-install 'lua-mode))
+(require 'lua-mode)
+
+
+;; (when (not (package-installed-p 'neotree))
+;;   (package-install 'neotree))
+;; (require 'neotree)
+;; (global-set-key [f8] 'neotree-toggle)
+
+
+
 
 
 

@@ -14,7 +14,11 @@
 ;;(load-theme 'minamin t)
 (load-theme 'minamindark t)
 
+(set-cursor-color "#ffffff")
+
+
 ;;(set-face-attribute 'fringe nil :background "#fffff5" :foreground "#2E2920")
+
 
 
 ;; (when (eq system-type 'darwin)

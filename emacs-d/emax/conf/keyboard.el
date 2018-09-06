@@ -45,6 +45,7 @@
             ))
 
 (global-set-key (kbd "<f5>") 'magit-status)
+(global-set-key (kbd "<f9>") 'scroll-lock-mode)
 
 (global-unset-key (kbd "s-P")) ;; was print buffer
 (global-set-key (kbd "s-P") 'magit-push)

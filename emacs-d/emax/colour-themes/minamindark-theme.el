@@ -10,7 +10,7 @@
 (defvar minamindark-colors-alist
   '(("minamin-fg"         . "#ECEFF4")
     ("minamin-bg-light"   . "#2C333F")
-    ("minamin-bg-light-1" . "#2E3440")
+    ("minamin-bg-light-1" . "#434C5E")
     ("minamin-purple"     . "#6622CC") 
     ("minamin-grey-2"     . "#2B2B2B")
     ("minamin-grey-1"     . "#383838")
@@ -87,8 +87,8 @@ Also bind `class' to ((class color) (min-colors 89))."
  (custom-theme-set-faces
   'minamindark
   `(default      ((t (:foreground ,minamin-fg :background , minamin-bg-light))))
-  `(cursor       ((t (:foreground ,minamin-purple :background,  minamin-bg-light))))
-  `(cursor-color ((t (:foreground ,minamin-purple :background,  minamin-bg-light))))
+  `(cursor       ((t (:foreground ,minamin-fg :background,  minamin-grey+5))))
+  `(cursor-color ((t (:foreground ,minamin-fg :background,  minamin-grey+5))))
   `(fringe       ((t (:foreground ,minamin-bg-light :background ,minamin-grey+4))))
 
   `(header-line  ((t (:foreground ,minamin-bg-light
