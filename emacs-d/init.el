@@ -29,7 +29,7 @@
  '(fci-rule-color "#ecece0")
  '(package-selected-packages
    (quote
-    (lua-mode neotree google-this ebib yasnippet yaml-mode web-mode vagrant-tramp tabbar solidity-mode slim-mode sass-mode rainbow-mode rainbow-delimiters paredit nav markdown-preview-mode magit jedi itail ido-ubiquitous graphviz-dot-mode go-mode flycheck find-file-in-project doom-themes docker csv-mode cider)))
+    (markdown-mode lua-mode neotree google-this ebib yasnippet yaml-mode web-mode vagrant-tramp tabbar solidity-mode slim-mode sass-mode rainbow-mode rainbow-delimiters paredit nav markdown-preview-mode magit jedi itail ido-ubiquitous graphviz-dot-mode go-mode flycheck find-file-in-project doom-themes docker csv-mode cider)))
  '(vc-annotate-background "#fffff5")
  '(vc-annotate-color-map
    (quote

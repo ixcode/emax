@@ -266,10 +266,12 @@
 
 (require 'tidy)
 
+
+(when (not (package-installed-p 'markdown-mode))
+  (package-install 'markdown-mode))
+
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-(when (not (package-installed-p 'markdown-preview-mode))
-  (package-install 'markdown-preview-mode))
 
 (setq explicit-shell-file-name "/bin/bash")
 
