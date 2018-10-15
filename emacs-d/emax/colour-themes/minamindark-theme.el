@@ -101,16 +101,16 @@ Also bind `class' to ((class color) (min-colors 89))."
                                  :background ,minamin-grey+3
                                  :box (:color, minamin-grey+3 :line-width 5 :style nil)))))
 
-  `(mode-line    ((t (:foreground ,minamin-grey+4
-                                  :background ,minamin-grey+3 
-                                  :box (:color ,minamin-grey+3 :line-width 2 :style nil)))))
+  `(mode-line    ((t (:foreground ,"gray80"
+                                  :background ,"gray30"
+                                  :box (:color ,"gray30" :line-width 2 :style nil)))))
 
   `(mode-line-buffer-id ((t (:foreground ,minamin-grey+4 :background nil))))
 
 
-  `(mode-line-inactive  ((t (:foreground ,minamin-grey+5 
-                                         :background ,minamin-grey+5 
-                                         :box (:color ,minamin-grey+5 :line-width 2 :style nil)))))
+  `(mode-line-inactive  ((t (:foreground ,"gray60"
+                                         :background ,"gray40"
+                                         :box (:color ,"gray40" :line-width 2 :style nil)))))
 
 
   `(highlight   ((t (:background ,minamin-bg-light-1 :inverse t))))

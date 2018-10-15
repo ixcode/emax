@@ -105,14 +105,14 @@ want to use in the modeline *in lieu of* the original.")
 (make-face 'mode-line-process-face)
 (make-face 'mode-line-80col-face)
 
-(set-face-attribute 'mode-line nil
-    :foreground "gray60" :background "gray40"
-    :inverse-video nil
-    :box '(:line-width 6 :color "gray40" :style nil))
-(set-face-attribute 'mode-line-inactive nil
-    :foreground "gray80" :background "gray30"
-    :inverse-video nil
-    :box '(:line-width 6 :color "gray30" :style nil))
+;; (set-face-attribute 'mode-line nil
+;;     :foreground "gray60" :background "gray40"
+;;     :inverse-video nil
+;;     :box '(:line-width 6 :color "gray40" :style nil))
+;; (set-face-attribute 'mode-line-inactive nil
+;;     :foreground "gray80" :background "gray30"
+;;     :inverse-video nil
+;;     :box '(:line-width 6 :color "gray30" :style nil))
 
 (set-face-attribute 'mode-line-read-only-face nil
     :inherit 'mode-line-face
