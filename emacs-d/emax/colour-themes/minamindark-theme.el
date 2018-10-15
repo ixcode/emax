@@ -1,3 +1,9 @@
+;;; minamindark-theme.el --- Sets up useful things for programming
+
+;;; Commentary:
+
+;;; Code:
+
 ;; http://www.gnu.org/software/emacs/manual/html_node/elisp/Defining-Faces.html
 ;; Nicked mostly from https://raw.github.com/bbatsov/zenburn-emacs/master/zenburn-theme.el
 ;; M-x list-faces-display
@@ -11,7 +17,7 @@
   '(("minamin-fg"         . "#ECEFF4")
     ("minamin-bg-light"   . "#2C333F")
     ("minamin-bg-light-1" . "#434C5E")
-    ("minamin-purple"     . "#6622CC") 
+    ("minamin-purple"     . "#6622CC")
     ("minamin-grey-2"     . "#2B2B2B")
     ("minamin-grey-1"     . "#383838")
     ("minamin-grey"       . "#3F3F3F")
@@ -26,7 +32,7 @@
     ("minamin-red-2"      . "#AC7373")
     ("minamin-red-3"      . "#9C6363")
     ("minamin-red-4"      . "#8C5353")
-    ("minamin-orange"     . "#DFAF8F") 
+    ("minamin-orange"     . "#DFAF8F")
     ("minamin-yellow"     . "#F0DFAF")
     ("minamin-yellow-1"   . "#E0CF9F")
     ("minamin-yellow-2"   . "#D0BF8F")
@@ -95,7 +101,7 @@ Also bind `class' to ((class color) (min-colors 89))."
                                  :background ,minamin-grey+3
                                  :box (:color, minamin-grey+3 :line-width 5 :style nil)))))
 
-  `(mode-line    ((t (:foreground ,minamin-grey+4 
+  `(mode-line    ((t (:foreground ,minamin-grey+4
                                   :background ,minamin-grey+3 
                                   :box (:color ,minamin-grey+3 :line-width 2 :style nil)))))
 
@@ -206,30 +212,30 @@ Also bind `class' to ((class color) (min-colors 89))."
 (declare-function rainbow-mode 'rainbow-mode)
 (declare-function rainbow-colorize-by-assoc 'rainbow-mode)
 
-(defvar minamin-add-font-lock-keywords nil
+(defvar minamindark-add-font-lock-keywords nil
   "Whether to add font-lock keywords for zenburn color names.
 In buffers visiting library `zenburn-theme.el' the zenburn
 specific keywords are always added.  In all other Emacs-Lisp
 buffers this variable controls whether this should be done.
 This requires library `rainbow-mode'.")
 
-(defvar minamin-colors-font-lock-keywords nil)
+(defvar minamindark-colors-font-lock-keywords nil)
 
 (defadvice rainbow-turn-on (after minamin activate)
   "Maybe also add font-lock keywords for minamin colors."
   (when (and (derived-mode-p 'emacs-lisp-mode)
-             (or minamin-add-font-lock-keywords
+             (or minamindark-add-font-lock-keywords
                  (equal (file-name-nondirectory (buffer-file-name))
                         "minamin-theme.el")))
-    (unless minamin-colors-font-lock-keywords
-      (setq minamin-colors-font-lock-keywords
-            `((,(regexp-opt (mapcar 'car minamin-colors-alist) 'words)
-               (0 (rainbow-colorize-by-assoc minamin-colors-alist))))))
-    (font-lock-add-keywords nil minamin-colors-font-lock-keywords)))
+    (unless minamindark-colors-font-lock-keywords
+      (setq minamindark-colors-font-lock-keywords
+            `((,(regexp-opt (mapcar 'car minamindark-colors-alist) 'words)
+               (0 (rainbow-colorize-by-assoc minamindark-colors-alist))))))
+    (font-lock-add-keywords nil minamindark-colors-font-lock-keywords)))
 
-(defadvice rainbow-turn-off (after minamin activate)
+(defadvice rainbow-turn-off (after minamindark activate)
   "Also remove font-lock keywords for minamin colors."
-  (font-lock-remove-keywords nil minamin-colors-font-lock-keywords))
+  (font-lock-remove-keywords nil minamindark-colors-font-lock-keywords))
 
 (set-cursor-color 'purple)
 ;;(set-face-background 'ac-candidate-face "#555555")
@@ -237,3 +243,5 @@ This requires library `rainbow-mode'.")
 ;;(set-face-background 'ac-selection-face "#777777")
 
 
+(provide 'minamindark-theme)
+;;; minamindark-theme.el ends here

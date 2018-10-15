@@ -14,8 +14,6 @@
 
 (provide 'init)
 ;;; init.el ends here
-
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -29,7 +27,7 @@
  '(fci-rule-color "#ecece0")
  '(package-selected-packages
    (quote
-    (markdown-mode lua-mode neotree google-this ebib yasnippet yaml-mode web-mode vagrant-tramp tabbar solidity-mode slim-mode sass-mode rainbow-mode rainbow-delimiters paredit nav markdown-preview-mode magit jedi itail ido-ubiquitous graphviz-dot-mode go-mode flycheck find-file-in-project doom-themes docker csv-mode cider)))
+    (ido-completing-read+ yaml-mode web-mode vagrant-tramp slim-mode sass-mode rainbow-mode rainbow-delimiters paredit nav markdown-mode magit lua-mode graphviz-dot-mode google-this go-mode flycheck elpy ebib csv-mode cider auto-complete)))
  '(vc-annotate-background "#fffff5")
  '(vc-annotate-color-map
    (quote

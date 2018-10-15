@@ -4,8 +4,8 @@
 ;; See http://shallowsky.com/blog/linux/editors/emacs-tab-separated-files.html
 
 ;;; Code:
-(when (not (package-installed-p 'docker))
-  (package-install 'docker))
+;; (when (not (package-installed-p 'docker))
+;;   (package-install 'docker))
 
 (when (not (package-installed-p 'csv-mode))
   (package-install 'csv-mode))
@@ -19,10 +19,10 @@
 ;; (defun csv-mode-setup-filetype ()
   
 ;;   (when (string= (file-name-extension buffer-file-name) "csv")
-;;     (setq csv-separators '(","))    
+;;     (setq csv-separators '(","))
 ;;     (message "Trying to setup csv-mode to use commas"))
 ;;   (when (string= (file-name-extension buffer-file-name) "tsv")
-;;     (setq csv-separators '("\t"))    
+;;     (setq csv-separators '("\t"))
 ;;     (message "Trying to setup csv-mode to use tabs")))
 
 ;; (add-hook 'csv-mode-hook 'csv-mode-setup-filetype)
@@ -45,16 +45,16 @@
 (when (not (package-installed-p 'find-file-in-project))
   (package-install 'find-file-in-project))
 
-(when (not (package-installed-p 'solidity-mode))
-  (package-install 'solidity-mode))
+;; (when (not (package-installed-p 'solidity-mode))
+;;   (package-install 'solidity-mode))
 
-(require 'solidity-mode)
+;; (require 'solidity-mode)
 
-(when (not (package-installed-p 'graphviz-dot-mode))
-  (package-install 'graphviz-dot-mode))
+;; (when (not (package-installed-p 'graphviz-dot-mode))
+;;   (package-install 'graphviz-dot-mode))
 
-(require 'graphviz-dot-mode)
-(add-to-list 'auto-mode-alist '("\\.dot$" . graphviz-dot-mode))
+;; (require 'graphviz-dot-mode)
+;; (add-to-list 'auto-mode-alist '("\\.dot$" . graphviz-dot-mode))
 
 ;; (when (not (package-installed-p 'dot-mode))
 ;;   (package-install 'dot-mode))
@@ -106,8 +106,8 @@
 (eval-after-load 'find-file-in-project
   '(add-to-list 'ffip-patterns "*.clj"))
 
-(when (not (package-installed-p 'tabbar))
-  (package-install 'tabbar))
+;; (when (not (package-installed-p 'tabbar))
+;;   (package-install 'tabbar))
 
 (unless (package-installed-p 'clojure-mode)
   (package-install 'clojure-mode))
@@ -159,7 +159,7 @@
 (add-hook 'cider-mode-hook 'rainbow-delimiters-mode)
 
 ;; https://github.com/syohex/emacs-git-gutter
-;; (when (not (package-installed-p 'git-gutter)) 
+;; (when (not (package-installed-p 'git-gutter))
 ;;   (package-install 'git-gutter))
 ;; This doesnt seem to work
 ;; (require 'git-gutter)
@@ -175,18 +175,18 @@
 (when (not (package-installed-p 'nav))
   (package-install 'nav))
 
-(when (not (package-installed-p 'itail))
-  (package-install 'itail))
+;; (when (not (package-installed-p 'itail))
+;;   (package-install 'itail))
 
-(require 'itail)
+;;(require 'itail)
 
-(when (not (package-installed-p 'jedi))
-  (package-install 'jedi))
+;; (when (not (package-installed-p 'jedi))
+;;   (package-install 'jedi))
 
-(require 'jedi)
-(setq python-python-command "/usr/local/bin/python3")
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)                 ; optional
+;; (require 'jedi)
+;; (setq python-python-command "/usr/local/bin/python3")
+;; (add-hook 'python-mode-hook 'jedi:setup)
+;; (setq jedi:complete-on-dot t)                 ; optional
 
 
 ;;(when (not (package-installed-p 'multi-web-mode))(package-install 'multi-web-mode))
@@ -246,7 +246,7 @@
   (package-install 'magit))
 
 
-(require 'magit) 
+(require 'magit)
 
 ;; (require 'lambda-mode)
 ;; (add-hook 'emacs-lisp-mode-hook       (lambda () (lambda-mode)))
@@ -256,13 +256,13 @@
 
 
 ;;(load "pretty-lambda.el")
-;; lambda mode seems to work well 
+;; lambda mode seems to work well
 ;;(load "eshell.el")
 (load "tidy.el")
 
 (defun my-comint-init ()
            (setq comint-process-echoes t))
-(add-hook 'comint-mode-hook 'my-comint-init) 
+(add-hook 'comint-mode-hook 'my-comint-init)
 
 (require 'tidy)
 
@@ -279,6 +279,7 @@
 (require 'nodejs-mode)
 
 ;; Autocomplete dependencies...
+
 (load "popup.el")
 (require 'popup)
 
@@ -391,6 +392,7 @@
 (add-to-list 'same-window-buffer-names "*nrepl*")
 (add-hook 'nrepl-mode-hook 'subword-mode)
 
+
 ;;Auto Complete
 ;;(live-add-pack-lib "ac-nrepl")
 ;;(require 'ac-nrepl )
@@ -476,7 +478,41 @@
 (require 'nodejs-repl)
 
 
-(require 'kotlin-mode)
+;;(require 'kotlin-mode)
+
+;;; Python
+;;; https://docs.python-guide.org/starting/install/osx/
+
+
+
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(when (not (package-installed-p 'elpy))
+  (package-install 'elpy))
+
+(require 'elpy)
+
+(setq python-shell-interpreter "jupyter"
+      python-shell-interpreter-args "console --simple-prompt"
+      python-shell-prompt-detect-failure-warning nil)
+(add-to-list 'python-shell-completion-native-disabled-interpreters "jupyter")
+
+(elpy-enable)
+
+(add-hook
+     'python-mode-hook
+      (lambda ()
+        (local-set-key (kbd "C-x C-e") #'elpy-shell-send-statement-and-step)))
+
+(add-hook 'elpy-mode-hook (lambda () (highlight-indentation-mode -1)))
+
+;; Note, thanks to https://www.reddit.com/r/emacs/comments/3c562f/using_emacs_elpy_flycheckpylint_how_to_disable/
+;; You need to put the following in a file called ~/.config/flake8 in order to turn off "line too long warnings"
+;; [flake8]
+;; ignore = E221,E501,E203,E202,E272,E251,E211,E222,E701
+;; max-line-length = 160
+;; exclude = tests/*
+;; max-complexity = 10
 
 (provide 'languages)
 ;;; languages.el ends here

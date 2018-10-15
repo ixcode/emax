@@ -18,7 +18,7 @@
 (load "shells.el")
 (message "Shells loaded ok.")
 
-;;(load "languages.el")
+(load "languages.el")
 (message "Languages loaded ok.")
 
 (load "journal.el")

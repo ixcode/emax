@@ -11,6 +11,7 @@
 ;; By default on os x, 'super' is mapped to copy, paste etc, like s-x, s-c, s-v, s-z
 ;; modifier settings can be: [control | meta | alt | super | hyper]
 
+;;; Code:
 (fset 'yes-or-no-p 'y-or-n-p) ;; "y or n" instead of "yes or no"
 
 
@@ -51,9 +52,14 @@
 (global-set-key (kbd "s-P") 'magit-push)
 
 
-(global-unset-key (kbd "M-f")) 
+(global-unset-key (kbd "M-f"))
 (global-unset-key (kbd "M-b"))
 
 (global-set-key (kbd "M-f") 'forward-word)
 (global-set-key (kbd "M-b") 'backward-word)
+
+(cua-mode t)
+
+(provide 'keyboard)
+;;; keyboard.el ends here
 

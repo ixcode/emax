@@ -1,12 +1,23 @@
-;; Interactive do
-(when (not (package-installed-p 'ido-ubiquitous))
-  (package-install 'ido-ubiquitous))
+;;; ido-conf.el --- Sets up useful things for programming
 
+;;; Commentary:
+
+;;; Code:
 
 (require 'ido)
+
+(ido-mode 1)
+(ido-everywhere 1)
+
+(when (not (package-installed-p 'ido-completing-read+)) ;;Replaces ido-ubiquitous
+  (package-install 'ido-completing-read+))
+
+
+
 ;;(require 'idomenu)
-(require 'ido-ubiquitous)
-(ido-mode t)
+
+(require 'ido-completing-read+)
+(ido-ubiquitous-mode 1)
 
 (icomplete-mode 1)
 
@@ -47,7 +58,7 @@
         face minibuffer-prompt))
 
 ;; For virtual buffers
-(setq recentf-max-saved-items 50)
+;;(setq recentf-max-saved-items 50)
 
 ;; Put ido completions on their own lines.
 ;; (setq ido-decorations
@@ -62,7 +73,7 @@
 ;;         " [Too big]"
 ;;         " [Confirm]"))
 
-;; (defun setup-ido () 
+;; (defun setup-ido ()
 ;;   (define-many-keys ido-completion-map
 ;;     `(("C- m" ido-merge-work-directories)
 ;;       ("C- <return>" ido-select-text)
@@ -79,3 +90,6 @@
 (ido-mode 1)
 (ido-everywhere 1) ; read-file-name etc
 (ido-ubiquitous-mode 1) ; completing-read
+
+(provide 'ido-conf)
+;;; ido-conf.el ends here
