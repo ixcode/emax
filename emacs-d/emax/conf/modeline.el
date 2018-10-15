@@ -1,3 +1,9 @@
+;;; languages.el --- Sets up useful things for programming
+
+;;; Commentary:
+
+;;; Code:
+
 ;; Settings for the mode line
 
 ;; The display settings for the modeline should be set in the color theme (see my zenburn version for example)
@@ -50,6 +56,7 @@ want to use in the modeline *in lieu of* the original.")
  
  
 (defun clean-mode-line ()
+  "Cleans up the modeline."
   (interactive)
   (loop for cleaner in mode-line-cleaner-alist
         do (let* ((mode (car cleaner))
@@ -70,12 +77,6 @@ want to use in the modeline *in lieu of* the original.")
 ;;; ς ε ρ τ υ θ ι ο π α σ δ φ γ η ξ κ λ ζ χ ψ ω β ν μ
 
 ;; from http://amitp.blogspot.co.uk/2011/08/emacs-custom-mode-line.html
-
-
-
-
-
-
 
 
 ;; Helper function
@@ -105,13 +106,13 @@ want to use in the modeline *in lieu of* the original.")
 (make-face 'mode-line-80col-face)
 
 (set-face-attribute 'mode-line nil
-    :foreground "gray60" :background "gray20"
-    :inverse-video nil
-    :box '(:line-width 6 :color "gray20" :style nil))
-(set-face-attribute 'mode-line-inactive nil
-    :foreground "gray80" :background "gray40"
+    :foreground "gray60" :background "gray40"
     :inverse-video nil
     :box '(:line-width 6 :color "gray40" :style nil))
+(set-face-attribute 'mode-line-inactive nil
+    :foreground "gray80" :background "gray30"
+    :inverse-video nil
+    :box '(:line-width 6 :color "gray30" :style nil))
 
 (set-face-attribute 'mode-line-read-only-face nil
     :inherit 'mode-line-face
@@ -140,10 +141,10 @@ want to use in the modeline *in lieu of* the original.")
     :height 130)
 (set-face-attribute 'mode-line-mode-face nil
     :inherit 'mode-line-face
-    :foreground "gray80")
+    :foreground "gray90")
 (set-face-attribute 'mode-line-minor-mode-face nil
     :inherit 'mode-line-mode-face
-    :foreground "gray40"
+    :foreground "gray70"
     :height 130)
 (set-face-attribute 'mode-line-process-face nil
     :inherit 'mode-line-face
@@ -194,3 +195,5 @@ want to use in the modeline *in lieu of* the original.")
 
 
 
+(provide 'modeline)
+;;; modeline.el ends here
