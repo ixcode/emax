@@ -63,6 +63,7 @@ want to use in the modeline *in lieu of* the original.")
                  (mode-str (cdr cleaner))
                  (old-mode-str (cdr (assq mode minor-mode-alist))))
              (when old-mode-str
+;;               (message (string-join '("Processing mode-str " old-mode-str)))
                  (setcar old-mode-str mode-str))
                ;; major mode
              (when (eq mode major-mode)

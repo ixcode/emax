@@ -78,7 +78,12 @@
   (package-install 'rainbow-mode))
 
 (require 'rainbow-mode)
-(rainbow-mode)
+;;(rainbow-mode 0)
+
+;;https://stackoverflow.com/questions/16048231/how-to-enable-a-non-global-minor-mode-by-default-on-emacs-startup
+(define-globalized-minor-mode emax-global-rainbow-mode rainbow-mode
+  (lambda () (rainbow-mode 1)))
+
 
 (setq completion-fail-discreetly t) ;; prevents annoying messages in the minibuffer
 

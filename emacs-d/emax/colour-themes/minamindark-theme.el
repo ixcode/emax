@@ -132,21 +132,21 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(font-lock-variable-name-face     ((t (:foreground ,nord-magenta))))
    `(font-lock-warning-face           ((t (:foreground ,minamin-fg))))
 
-   `(magit-branch                     ((t (:foreground ,minamin-fg :background,minamin-bg-light :box nil))))
-   `(magit-section-title              ((t (:foreground ,minamin-fg :background,minamin-bg-light :box nil))))
+   `(magit-branch                     ((t (:foreground ,minamin-fg :background ,minamin-bg-light :box nil))))
+   `(magit-section-title              ((t (:foreground ,minamin-fg :background ,minamin-bg-light :box nil))))
 
-   '(rainbow-delimiters-depth-1-face   ((t (:foreground "#9933FF"))))
-   '(rainbow-delimiters-depth-2-face   ((t (:foreground "#9999CC"))))
-   '(rainbow-delimiters-depth-3-face   ((t (:foreground "#554499"))))
-   '(rainbow-delimiters-depth-4-face   ((t (:foreground "#669999"))))
-   '(rainbow-delimiters-depth-5-face   ((t (:foreground "#336666"))))
-   '(rainbow-delimiters-depth-6-face   ((t (:foreground "#442266"))))
-   '(rainbow-delimiters-depth-7-face   ((t (:foreground "#9999CC"))))
-   '(rainbow-delimiters-depth-8-face   ((t (:foreground "#666699"))))
-   '(rainbow-delimiters-depth-9-face   ((t (:foreground "#99CCCC"))))
-   '(rainbow-delimiters-unmatched-face ((t (:foreground "#FF0000"))))
+   `(rainbow-delimiters-depth-1-face   ((t (:foreground "green" :weight bold))))
+   `(rainbow-delimiters-depth-2-face   ((t (:foreground "#A2BF8A"))))
+   `(rainbow-delimiters-depth-3-face   ((t (:foreground "#86C0D1"))))
+   `(rainbow-delimiters-depth-4-face   ((t (:foreground "#a9a1e1"))))
+   `(rainbow-delimiters-depth-5-face   ((t (:foreground "#ECCC87"))))
+   `(rainbow-delimiters-depth-6-face   ((t (:foreground "#D2876D"))))
+   `(rainbow-delimiters-depth-7-face   ((t (:foreground "#A2BF8A"))))
+   `(rainbow-delimiters-depth-8-face   ((t (:foreground "#C16069"))))
+   `(rainbow-delimiters-depth-9-face   ((t (:foreground "#80A0C2"))))
+   `(rainbow-delimiters-unmatched-face ((t (:foreground "#B58DAE"))))
 
-   '(show-paren-match-face             ((t (:foreground "#ff33cc" :background nil :bold t))))
+   `(show-paren-match-face             ((t (:foreground "#ff33cc" :background nil :bold t))))
 
    ;;'(table-cell                        ((t (:foreground ,minamin-fg))))
 
@@ -205,7 +205,6 @@ Also bind `class' to ((class color) (min-colors 89))."
 
 
 
-(provide-theme 'minamindark)
 
 ;;; Rainbow Support - Adding font lock so you can see all the colors defined.
 
@@ -237,10 +236,14 @@ This requires library `rainbow-mode'.")
   "Also remove font-lock keywords for minamin colors."
   (font-lock-remove-keywords nil minamindark-colors-font-lock-keywords))
 
-(set-cursor-color 'purple)
+(set-cursor-color 'magenta)
+(set-mouse-color "white")
+
 ;;(set-face-background 'ac-candidate-face "#555555")
 ;;(set-face-underline 'ac-candidate-face "#555555")
 ;;(set-face-background 'ac-selection-face "#777777")
+
+(provide-theme 'minamindark)
 
 
 (provide 'minamindark-theme)
