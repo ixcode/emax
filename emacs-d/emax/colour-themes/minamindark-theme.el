@@ -160,7 +160,7 @@ Also bind `class' to ((class color) (min-colors 89))."
 
 ;; The shell...
 
-(setq ansi-color-names-vector [minamin-bg ,nord-red , minamin-green-1 ,nord-yellow 
+(setq ansi-color-names-vector [minamin-bg ,nord-red , minamin-green-1 ,nord-yellow
                               ,nord-blue ,nord-magenta ,minamin-cyan ,minamin-fg])
 (minamindark-with-color-variables
   (custom-theme-set-variables
@@ -236,8 +236,7 @@ This requires library `rainbow-mode'.")
   "Also remove font-lock keywords for minamin colors."
   (font-lock-remove-keywords nil minamindark-colors-font-lock-keywords))
 
-(set-cursor-color 'magenta)
-(set-mouse-color "white")
+
 
 ;;(set-face-background 'ac-candidate-face "#555555")
 ;;(set-face-underline 'ac-candidate-face "#555555")
@@ -245,6 +244,8 @@ This requires library `rainbow-mode'.")
 
 (provide-theme 'minamindark)
 
+(set-cursor-color 'magenta)
+(set-mouse-color "white")
 
 (provide 'minamindark-theme)
 ;;; minamindark-theme.el ends here

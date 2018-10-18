@@ -1,4 +1,8 @@
+;;; foundations.el --- Sets up useful things for programming
 
+;;; Commentary:
+
+;;; Code:
 
 
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
@@ -8,7 +12,7 @@
                          ("melpa" . "http://melpa.org/packages/")))
 
 (package-initialize)
-; fetch the list of packages available 
+; fetch the list of packages available
 (when (not package-archive-contents)
   (package-refresh-contents))
 
@@ -56,3 +60,5 @@
 (autoload 'tsv-normal-mode "tsv-mode" "A minor mode to edit table like file" t)
 
 
+(provide 'foundations)
+;;; foundations.el ends here

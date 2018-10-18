@@ -10,6 +10,10 @@
 (when (not (package-installed-p 'csv-mode))
   (package-install 'csv-mode))
 
+(when (not (package-installed-p 'fish-mode))
+  (package-install 'fish-mode))
+
+
 (add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.[Tt][Ss][Vv]\\'" . csv-mode))
 (autoload 'csv-mode "csv-mode"
@@ -277,6 +281,8 @@
 
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+(add-hook 'markdown-mode 'goto-address-mode)
+
 
 (setq explicit-shell-file-name "/bin/bash")
 
@@ -507,7 +513,7 @@
 (add-hook
      'python-mode-hook
       (lambda ()
-        (local-set-key (kbd "C-x C-e") #'elpy-shell-send-statement-and-step)))
+        (local-set-key (kbd "C-x C-e") 'elpy-shell-send-statement-and-step)))
 
 (add-hook 'elpy-mode-hook (lambda () (highlight-indentation-mode -1)))
 

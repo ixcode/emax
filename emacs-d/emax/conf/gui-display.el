@@ -15,6 +15,7 @@
       (set-frame-size (selected-frame) 130 47)
       (set-frame-position (selected-frame) 0 0)))
 
+(set-mouse-color "white")
 (require 'linum)
 ;;(global-linum-mode 1)
 (setq linum-format " %4d ")
@@ -22,6 +23,8 @@
 (when (display-graphic-p)
   (tool-bar-mode -1) ;; hide the toolbar
   (scroll-bar-mode -1))
+
+;;(load "eaf/eaf.el") ;; eaf doesnt work on a mac
 
 ;;(global-hl-line-mode)
 

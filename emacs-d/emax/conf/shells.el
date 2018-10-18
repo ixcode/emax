@@ -1,4 +1,12 @@
+;;; foundations.el --- Sets up useful things for programming
+
+;;; Commentary:
+
+;;; Code:
+
 (load "ssh-shell.el")
+
+(setq system-uses-terminfo nil)
 
 (when (not (package-installed-p 'vagrant-tramp))
   (package-install 'vagrant-tramp))
@@ -6,7 +14,6 @@
 (eval-after-load 'tramp
   '(vagrant-tramp-enable))
 
- (require 'multi-term)
 
 ;;(when (not (package-installed-p 'top-mode))
 ;;  (package-install 'top-mode))
@@ -15,6 +22,9 @@
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
+
+
+(ansi-color-for-comint-mode-on)
 
 ;; http://stackoverflow.com/questions/13763912/emacs-how-to-change-some-colors-in-m-x-shell
 
@@ -26,6 +36,7 @@
 ;; ["#fffff5" "#cc0000" "#8FB28F" "#813a01" "#271aff" "#6622CC" "#1a87ff" "#333c4e"] ;; this is for light mode
 ;; ["black" "red" "green" "yellow" "PaleBlue" "magenta" "cyan" "white"] ;; This is the default
 (defun refresh-shell-colors ()
+  (interactive)
   (setq ansi-color-names-vector
    ["#3B425" "#C16069" "#A2BF8A" "#ECCC87" "#80A0C2" "#B58DAE" "#86C0D1" "#f0f0f0"]) ;; these are nord colors
   (setq ansi-color-map (ansi-color-make-color-map))
@@ -41,6 +52,9 @@
   (mapconcat (lambda (regexp)
                (concat "\\(?:" regexp "\\)"))
              regexps "\\|"))
+
+;; https://www.reddit.com/r/emacs/comments/88yzp4/better_way_to_run_terminals_in_emacs/
+;; http://paralambda.org/2012/07/02/using-gnu-emacs-as-a-terminal-emulator/
 
 (defvar non-sgr-control-sequence-regexp nil
   "Regexp that matches non-SGR control sequences.")
@@ -80,3 +94,32 @@
           'filter-non-sgr-control-sequences-in-output)
 
 
+(load "multi-term.el")
+
+(require 'multi-term)
+(setq multi-term-program "/usr/local/bin/fish")
+(setq multi-shell-use-ansi-color t) ;; sets hook to use ansi color for comint mode
+
+;;(add-hook 'term-mode-hook 'refresh-shell-colors)
+(defun fish ()
+  "Shortcut for launching multiterm with fish in it."
+    (interactive)
+  (multi-term))
+
+(eval-after-load "term"
+  '(define-key term-raw-map (kbd "s-v") 'term-paste))
+
+;; (add-hook
+;;      'term-mode-hook
+;;      (lambda ()
+;;        (message "Trying to override paste function")
+;;        (local-unset-key (kbd "s-v"))
+;;        (local-set-key (kbd "s-v") 'term-paste)))
+;; https://github.com/fish-shell/fish-shell/issues/2983
+;; https://github.com/fish-shell/fish-shell/issues/2441
+;; https://emacs.stackexchange.com/questions/7372/stray-trailing-4m-before-prompt-with-zsh-in-m-x-ansi-term
+;;  https://emacs.stackexchange.com/questions/20545/emacs-colors-being-set-differently-when-term-is-screen-256color-and-xterm-256
+;; https://fishshell.com/docs/current/index.html#variables-color
+
+(provide 'shells)
+;;; shells.el ends here

@@ -27,7 +27,7 @@
  '(fci-rule-color "#ecece0")
  '(package-selected-packages
    (quote
-    (ido-completing-read+ yaml-mode web-mode vagrant-tramp slim-mode sass-mode rainbow-mode rainbow-delimiters paredit nav markdown-mode magit lua-mode graphviz-dot-mode google-this go-mode flycheck elpy ebib csv-mode cider auto-complete)))
+    (fish-mode ido-completing-read+ yaml-mode web-mode vagrant-tramp slim-mode sass-mode rainbow-mode rainbow-delimiters paredit nav markdown-mode magit lua-mode graphviz-dot-mode google-this go-mode flycheck elpy ebib csv-mode cider auto-complete)))
  '(vc-annotate-background "#fffff5")
  '(vc-annotate-color-map
    (quote

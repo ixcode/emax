@@ -74,5 +74,7 @@
      (360 . "#6622CC"))))
  '(vc-annotate-very-old-color "#6622CC"))
 
+(set-cursor-color 'magenta)
+
 (provide 'init-for-ui)
 ;;; init-for-ui.el ends here
