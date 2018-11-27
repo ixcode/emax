@@ -2,10 +2,13 @@
 
 ;;; Commentary:
 
+;;; https://www.google.com/search?q=make+fish+default+shell&ie=utf-8&oe=utf-8&client=firefox-b-ab
 ;;; Code:
 
 (load "ssh-shell.el")
 
+;;(setq explicit-shell-file-name "/bin/bash")
+;;(setq explicit-shell-file-name "/usr/local/bin/fish")
 (setq system-uses-terminfo nil)
 
 (when (not (package-installed-p 'vagrant-tramp))
@@ -96,9 +99,9 @@
 
 (load "multi-term.el")
 
-(require 'multi-term)
-(setq multi-term-program "/usr/local/bin/fish")
-(setq multi-shell-use-ansi-color t) ;; sets hook to use ansi color for comint mode
+;;(require 'multi-term)
+;;(setq multi-term-program "/usr/local/bin/fish")
+;;(setq multi-shell-use-ansi-color t) ;; sets hook to use ansi color for comint mode
 
 ;;(add-hook 'term-mode-hook 'refresh-shell-colors)
 (defun fish ()
@@ -121,5 +124,8 @@
 ;;  https://emacs.stackexchange.com/questions/20545/emacs-colors-being-set-differently-when-term-is-screen-256color-and-xterm-256
 ;; https://fishshell.com/docs/current/index.html#variables-color
 
+;;https://www.emacswiki.org/emacs/AnsiTermHints
+;;https://finiteheap.com/emacs/2015/12/20/ansi-remote-directory-tracking.html
+;;https://github.com/dieggsy/esh-autosuggest
 (provide 'shells)
 ;;; shells.el ends here

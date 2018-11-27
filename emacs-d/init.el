@@ -5,6 +5,9 @@
 ;;; Code:
 (message "[emax] : This is the start of something beautiful...")
 
+;; If having trouble loading - can do this open -a /Applications/Emacs.app --args --debug-init
+
+
 (add-to-list 'load-path "~/.emacs.d/emax/lib")
 (add-to-list 'load-path "~/.emacs.d/emax/conf")
 

@@ -15,7 +15,7 @@
 (load "foundations.el")
 (message "Foundations loaded ok.")
 
-(load "shells.el")
+;;(load "shells.el")
 (message "Shells loaded ok.")
 
 (load "languages.el")
