@@ -16,6 +16,11 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+(when (not (package-installed-p 'exec-path-from-shell))
+  (package-install 'exec-path-from-shell))
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 (load "temp-files-conf.el")
 
@@ -58,6 +63,11 @@
 ;; need to work out how to turn off tabs mode for everything except tsv files
 (autoload 'tsv-mode "tsv-mode" "A mode to edit table like file" t)
 (autoload 'tsv-normal-mode "tsv-mode" "A minor mode to edit table like file" t)
+
+(when (not (package-installed-p 'expand-region))
+  (package-install 'expand-region))
+
+(pending-delete-mode t)
 
 
 (provide 'foundations)

@@ -503,6 +503,9 @@
 
 (require 'elpy)
 
+(when (not (package-installed-p 'nim-mode))
+  (package-install 'nim-mode))
+
 
 (setq python-shell-interpreter "jupyter"
       python-shell-interpreter-args "console --simple-prompt"
@@ -525,6 +528,9 @@
 ;; max-line-length = 160
 ;; exclude = tests/*
 ;; max-complexity = 10
+
+(require 'dockerfile-mode)
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
 
 (provide 'languages)
 ;;; languages.el ends here

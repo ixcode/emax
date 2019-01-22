@@ -58,6 +58,8 @@
 (global-set-key (kbd "M-f") 'forward-word)
 (global-set-key (kbd "M-b") 'backward-word)
 
+(global-set-key (kbd "C-2") 'er/expand-region)
+
 (cua-mode t)
 
 (provide 'keyboard)

@@ -30,7 +30,7 @@
  '(fci-rule-color "#ecece0")
  '(package-selected-packages
    (quote
-    (fish-mode ido-completing-read+ yaml-mode web-mode vagrant-tramp slim-mode sass-mode rainbow-mode rainbow-delimiters paredit nav markdown-mode magit lua-mode graphviz-dot-mode google-this go-mode flycheck elpy ebib csv-mode cider auto-complete)))
+    (expand-region nim-mode exec-path-from-shell fish-mode ido-completing-read+ yaml-mode web-mode vagrant-tramp slim-mode sass-mode rainbow-mode rainbow-delimiters paredit nav markdown-mode magit lua-mode graphviz-dot-mode google-this go-mode flycheck elpy ebib csv-mode cider auto-complete)))
  '(vc-annotate-background "#fffff5")
  '(vc-annotate-color-map
    (quote
