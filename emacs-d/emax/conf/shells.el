@@ -7,7 +7,7 @@
 
 (load "ssh-shell.el")
 
-(setq explicit-shell-file-name "/usr/local/bin/zsh")
+
 
 ;; Disable all bold fonts
 (mapc
@@ -17,7 +17,7 @@
 
 ;;(setq explicit-shell-file-name "/bin/bash")
 ;;(setq explicit-shell-file-name "/usr/local/bin/fish")
-(setq system-uses-terminfo nil)
+(set-default 'system-uses-terminfo nil)
 
 (when (not (package-installed-p 'vagrant-tramp))
   (package-install 'vagrant-tramp))
@@ -72,10 +72,18 @@
                                        :background ,"black"))))
    '(term-default-fg-color ((t (:inherit term-color-white))))
    '(term-default-bg-color ((t (:inherit term-color-black))))
-  (message "Have reset ansi colors for term"))
+   (message "Have reset ansi colors for term"))
+
+(defun disable-bold-fonts()
+  (interactive)
+  (mapc
+  (lambda (face)
+    (set-face-attribute face nil :weight 'normal :underline nil))
+  (face-list))
+  (message "Disabled bold fonts in "))
 
 (add-hook 'shell-mode-hook 'refresh-shell-colors)
-(add-hook 'term-mode-hook 'refresh-term-colors)
+(add-hook 'term-mode-hook 'disable-bold-fonts)
 ;;(setq ansi-color-map (ansi-color-make-color-map))
 
 ;; Filter out dogy characters

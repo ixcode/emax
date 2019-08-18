@@ -14,8 +14,8 @@
 
 (makunbound 'minamindark-colors-alist)
 (defvar minamindark-colors-alist
-  '(("minamin-fg"         . "#ECEFF4")
-    ("minamin-bg-light"   . "#2C333F")
+  '(("minamin-fg"         . "#DCDCDC")
+    ("minamin-bg-light"   . "#1E1E1E")
     ("minamin-bg-light-1" . "#434C5E")
     ("minamin-purple"     . "#6622CC")
     ("minamin-grey-2"     . "#2B2B2B")

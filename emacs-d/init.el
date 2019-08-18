@@ -15,6 +15,8 @@
   (load "init-for-ui")
   (load "init-for-terminal"))
 
+;;(set-default 'explicit-shell-file-name "/usr/local/bin/zsh")
+
 (provide 'init)
 ;;; init.el ends here
 (custom-set-variables
@@ -27,6 +29,7 @@
  '(custom-safe-themes
    (quote
     ("bd3a84a9cd58d5d5c9f7f71bc0317634a7d4fe17b5523403203ac4894a105e72" default)))
+ '(explicit-shell-file-name "/usr/local/bin/zsh")
  '(fci-rule-color "#ecece0")
  '(package-selected-packages
    (quote
