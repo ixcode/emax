@@ -58,4 +58,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(term-color-black ((t (:background "black" :foreground "#3B425" :underline nil :weight normal))))
+ '(term-color-blue ((t (:background "#80A0C2" :foreground "#80A0C2" :underline nil :weight normal))))
+ '(term-color-cyan ((t (:background "#86C0D1" :foreground "#86C0D1" :underline nil :weight normal))))
+ '(term-color-green ((t (:background "#A2BF8A" :foreground "#A2BF8A" :underline nil :weight normal))))
+ '(term-color-magenta ((t (:background "#B58DAE" :foreground "#B58DAE" :underline nil :weight normal))))
+ '(term-color-red ((t (:background "#C16069" :foreground "#C16069" :underline nil :weight normal))))
+ '(term-color-white ((t (:background "#f0f0f0" :foreground "#f0f0f0" :underline nil :weight normal))))
+ '(term-color-yellow ((t (:background "#ECCC87" :foreground "#ECCC87" :underline nil :weight normal)))))

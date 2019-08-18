@@ -7,6 +7,14 @@
 
 (load "ssh-shell.el")
 
+(setq explicit-shell-file-name "/usr/local/bin/zsh")
+
+;; Disable all bold fonts
+(mapc
+  (lambda (face)
+    (set-face-attribute face nil :weight 'normal :underline nil))
+  (face-list))
+
 ;;(setq explicit-shell-file-name "/bin/bash")
 ;;(setq explicit-shell-file-name "/usr/local/bin/fish")
 (setq system-uses-terminfo nil)
@@ -45,7 +53,29 @@
   (setq ansi-color-map (ansi-color-make-color-map))
   (message "Have reset ansi colors"))
 
+(defun refresh-term-colors ()
+   `(term-color-black ((t (:foreground , "#3B425"
+                                       :background ,"black"))))
+   `(term-color-red ((t (:foreground , "#C16069"
+                                       :background ,"black"))))
+   `(term-color-green ((t (:foreground ,"#A2BF8A"
+                                       :background ,"black"))))
+   `(term-color-yellow ((t (:foreground ,"#ECCC87"
+                                       :background ,"black"))))
+   `(term-color-blue ((t (:foreground ,"#80A0C2"
+                                      :background ,"black"))))
+   `(term-color-magenta ((t (:foreground ,"#B58DAE"
+                                         :background ,"black"))))
+   `(term-color-cyan ((t (:foreground ,"#86C0D1"
+                                       :background ,"black"))))
+   `(term-color-white ((t (:foreground ,"#f0f0f0"
+                                       :background ,"black"))))
+   '(term-default-fg-color ((t (:inherit term-color-white))))
+   '(term-default-bg-color ((t (:inherit term-color-black))))
+  (message "Have reset ansi colors for term"))
+
 (add-hook 'shell-mode-hook 'refresh-shell-colors)
+(add-hook 'term-mode-hook 'refresh-term-colors)
 ;;(setq ansi-color-map (ansi-color-make-color-map))
 
 ;; Filter out dogy characters
