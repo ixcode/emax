@@ -48,6 +48,9 @@
 
 (global-visual-line-mode t)
 
+(set-cursor-color 'magenta)
+
 ;;(load "powerline.el")
+
 
 

@@ -244,7 +244,7 @@ This requires library `rainbow-mode'.")
 
 (provide-theme 'minamindark)
 
-(set-cursor-color 'magenta)
+
 (set-mouse-color "white")
 
 (provide 'minamindark-theme)

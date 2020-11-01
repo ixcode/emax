@@ -6,8 +6,11 @@
 
 (message "Configuring EMAX in Terminal mode")
 
+
 (load "startup-message.el")
 (load "keyboard-terminal.el")
+
+(load "themes.el")
 
 (menu-bar-mode -1)
 
