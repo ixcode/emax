@@ -7,3 +7,6 @@ any existing emacs config you have and install `emax`. Simply fire up yer fave e
 
 If you don't like it and want to go back to your old ways, you can just do `./restore.sh`
 
+# Making things work in iterm
+
+There is an preference to control how the option key behacves - its under "preferences/profiles/keys" - behaviour of right option key - set this to be "esc+"
