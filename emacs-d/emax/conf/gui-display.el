@@ -6,7 +6,7 @@
 ;;; Code:
 (message "Running in GUI display mode")
 
-(load "themes.el")
+;;(load "themes.el") - should be able to load this in terminal and app
 
 (set-default-font "Menlo 15")
 

@@ -13,6 +13,8 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/emax/colour-themes")
 ;;(load-theme 'minamin t)
 (load-theme 'minamindark t)
+;;(load-theme 'dracula t)
+
 
 
 

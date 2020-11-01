@@ -50,6 +50,7 @@
 
 (set-face-attribute 'fringe nil :background "#fffff5" :foreground "#2E2920")
 
+(load "themes.el")
 
 (if (display-graphic-p)
     (load "gui-display.el")
