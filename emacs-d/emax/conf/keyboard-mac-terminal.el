@@ -36,8 +36,11 @@
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
+(electric-pair-mode)
+
+(global-set-key (kbd "<f5>") 'magit-status)
+(global-unset-key (kbd "s-P")) ;; was print buffer
+(global-set-key (kbd "s-P") 'magit-push)
 
 (provide 'keyboard-mac-terminal)
 ;;; keyboard-mac-terminal.el ends here
-
- 
