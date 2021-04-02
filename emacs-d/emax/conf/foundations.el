@@ -66,7 +66,7 @@
 
 (when (not (package-installed-p 'expand-region))
   (package-install 'expand-region))
-
+(require 'expand-region)
 (pending-delete-mode t)
 
 

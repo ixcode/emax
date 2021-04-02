@@ -14,6 +14,8 @@
   (package-install 'fish-mode))
 
 
+;; https://github.com/emacs-lsp/lsp-java
+
 (add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.[Tt][Ss][Vv]\\'" . csv-mode))
 (autoload 'csv-mode "csv-mode"
@@ -290,7 +292,8 @@
 (require 'nodejs-mode)
 
 ;; Autocomplete dependencies...
-
+(when (not (package-installed-p 'popup))
+  (package-install 'popup))
 (load "popup.el")
 (require 'popup)
 
@@ -300,8 +303,10 @@
 (when (not (package-installed-p 'auto-complete))
   (package-install 'auto-complete))
 
-(add-to-list 'load-path "~/.emacs.d/auto-complete")
-(load "auto-complete.el")
+;;(add-to-list 'load-path "~/.emacs.d/auto-complete")
+;;(load "auto-complete.el")
+(require 'auto-complete)
+
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
 
 (require 'auto-complete-config)
