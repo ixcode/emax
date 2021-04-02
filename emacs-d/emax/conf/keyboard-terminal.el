@@ -6,7 +6,7 @@
 
 (if (eq system-type 'darwin)
     (load "keyboard-mac-terminal.el"))
-
+(load "keyboard.el")
 ;; To allow window switching easy:
 (defun select-next-window ()
   "Switch to the next window."
@@ -23,6 +23,7 @@
 
 (global-set-key (kbd "<s-right>") 'select-next-window)
 (global-set-key (kbd "<s-left>")  'select-previous-window)
+
 
 
 (provide 'keyboard-terminal)
