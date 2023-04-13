@@ -11,15 +11,25 @@
 
 ;;(load "terminal-foundations.el")
 
+
+(when (not (package-installed-p 'auto-complete))
+  (package-install 'auto-complete))
+
 (require 'auto-complete)
 (require 'auto-complete-config)
 (load "ido-conf.el")
 
-(require `yasnippet)
+(when (not (package-installed-p 'yasnippet))
+  (package-install 'yasnippet))
+
+(require 'yasnippet)
 (yas-global-mode 1)
 
 (ac-config-default)
 (global-auto-complete-mode t)
+
+(when (not (package-installed-p 'magit))
+  (package-install 'magit))
 
 (require 'magit)
 

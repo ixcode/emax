@@ -9,7 +9,7 @@
 
 (require 'package)
 (package-initialize)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (when (not package-archive-contents)
   (package-refresh-contents))
 
