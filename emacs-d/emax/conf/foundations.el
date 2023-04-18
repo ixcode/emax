@@ -3,6 +3,8 @@
 ;;; Commentary:
 
 ;;; Code:
+(message "Initialising foundations")
+
 
 
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
@@ -16,6 +18,9 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+(set-default 'explicit-shell-file-name "/bin/zsh")
+
+;; copies path environment from the shell into emacs
 (when (not (package-installed-p 'exec-path-from-shell))
   (package-install 'exec-path-from-shell))
 
@@ -68,6 +73,8 @@
   (package-install 'expand-region))
 (require 'expand-region)
 (pending-delete-mode t)
+
+
 
 
 (provide 'foundations)

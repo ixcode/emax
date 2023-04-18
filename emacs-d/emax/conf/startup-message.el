@@ -18,14 +18,13 @@
   (car (split-string (shell-command-to-string "whoami") "\n")))
     
 (setq initial-scratch-message
-      (concat *emax*
-              (car (split-string (version) "\n"))
-              "
-;;
-;; Hello " (current-user) ". " (choose-message)
-              "
-
-"))
+      "
+;; Useful keyboard shortcuts:
+;; C-h w command-name - tell you what a command is bound to keys
+;; C-h k key-sequence - type a key and it tells you the command
+;; M-m - back-to-indent - Takes you to the indented start of the line
+;; C-M-v - Scroll OTHER window
+")
 
 (defun open-scratch-with (txt)
   "Open the scratch buffer with the specified text (as TXT)."

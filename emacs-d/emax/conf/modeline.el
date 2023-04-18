@@ -1,4 +1,4 @@
-;;; languages.el --- Sets up useful things for programming
+;;; modeline.el --- Sets up useful things for programming
 
 ;;; Commentary:
 
@@ -58,7 +58,7 @@ want to use in the modeline *in lieu of* the original.")
 (defun clean-mode-line ()
   "Cleans up the modeline."
   (interactive)
-  (loop for cleaner in mode-line-cleaner-alist
+  (cl-loop for cleaner in mode-line-cleaner-alist
         do (let* ((mode (car cleaner))
                  (mode-str (cdr cleaner))
                  (old-mode-str (cdr (assq mode minor-mode-alist))))

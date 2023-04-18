@@ -45,7 +45,7 @@
 
 (load "headerline.el")
 (load "modeline.el")
-(load "popwin-conf.el")
+;;(load "popwin-conf.el")
 
 
 (set-face-attribute 'fringe nil :background "#fffff5" :foreground "#2E2920")

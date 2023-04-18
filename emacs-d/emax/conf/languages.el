@@ -7,12 +7,15 @@
 ;; (when (not (package-installed-p 'docker))
 ;;   (package-install 'docker))
 
-(when (not (package-installed-p 'csv-mode))
+
+;; (unless (package-installed-p 'lsp-mode)
+;;   (package-install 'lsp-mode))
+
+(unless (package-installed-p 'csv-mode)
   (package-install 'csv-mode))
 
-(when (not (package-installed-p 'fish-mode))
+(unless (package-installed-p 'fish-mode)
   (package-install 'fish-mode))
-
 
 ;; https://github.com/emacs-lsp/lsp-java
 

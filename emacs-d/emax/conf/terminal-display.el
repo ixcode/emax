@@ -15,9 +15,6 @@
 ;; By default don't wrap lines
 (setq-default truncate-lines t)
 
-;; Display line and column numbers
-(setq line-number-mode    t)
-(setq column-number-mode  t)
 
 ;; Explicitly show the end of a buffer
 (set-default 'indicate-empty-lines nil)
@@ -29,3 +26,4 @@
 
 (provide 'terminal-display)
 ;;; terminal-display.el  ends here
+

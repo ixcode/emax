@@ -2,7 +2,7 @@
 
 ;; This keyboard layout is focused on the core of editing on a mac
 ;; Therefore it prioritises mac familiar key shortcuts.
-n
+
 ;; The goal here is to try and preserve the "OSX" experience so that you don't have to remap the world.
 
 ;; The next most useful key in emacs is the META key, so we bind that to the right option key
