@@ -12,10 +12,12 @@
 (setq mac-right-command-modifier 'super)
 
 (defun insert-pound ()
+  "Put the pound(#) key in the buffer."
   (interactive)
   (insert "#"))
 
 (defun insert-gbp ()
+  "Put the british pound (£) key in the buffer."
   (interactive)
   (insert "£"))
 
