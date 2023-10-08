@@ -17,8 +17,6 @@
 
 
 
-
-
 ;;(set-face-att
 ;;(load-theme 'doom-nord t)
 

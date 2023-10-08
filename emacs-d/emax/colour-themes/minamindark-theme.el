@@ -113,11 +113,12 @@ Also bind `class' to ((class color) (min-colors 89))."
                                          :box (:color ,"gray40" :line-width 2 :style nil)))))
 
 
-  `(highlight   ((t (:background ,minamin-bg-light-1 :inverse t))))
+  `(highlight   ((t (:background ,minamin-grey-1 ))))
   `(region      ((t (:background ,minamin-green+3 :foreground "#1E1E1E"))))
+  `(minibuffer-prompt ((t (:foreground ,minamin-green+4 ))))
 
-   ;;;; font lock
-   `(font-lock-builtin-face           ((t (:foreground ,nord-teal))))
+;;;; font lock
+  `(font-lock-builtin-face           ((t (:foreground ,nord-teal))))
    `(font-lock-comment-face           ((t (:foreground ,minamin-grey+3))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,minamin-grey+3))))
    `(font-lock-constant-face          ((t (:foreground ,nord-magenta))))
@@ -132,9 +133,11 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(font-lock-variable-name-face     ((t (:foreground ,nord-magenta))))
    `(font-lock-warning-face           ((t (:foreground ,minamin-fg))))
 
+   ;;https://magit.vc/manual/magit/Theming-Faces.html
    `(magit-branch                     ((t (:foreground ,minamin-fg :background ,minamin-bg-light :box nil))))
    `(magit-section-title              ((t (:foreground ,minamin-fg :background ,minamin-bg-light :box nil))))
-
+   `(magit-section-highlight          ((t (:foreground ,minamin-bg-light :background ,minamin-green+3 :box nil))))
+   
    `(rainbow-delimiters-depth-1-face   ((t (:foreground "green" :weight bold))))
    `(rainbow-delimiters-depth-2-face   ((t (:foreground "#A2BF8A"))))
    `(rainbow-delimiters-depth-3-face   ((t (:foreground "#86C0D1"))))
@@ -245,7 +248,7 @@ This requires library `rainbow-mode'.")
 (provide-theme 'minamindark)
 
 
-(set-mouse-color "white")
+(set-mouse-color "purple")
 
 (provide 'minamindark-theme)
 ;;; minamindark-theme.el ends here
