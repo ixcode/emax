@@ -22,12 +22,12 @@
   (insert "£"))
 
 
+;; Might need to change this part depending if you remap the £ or # keys
 
-
-;;  (global-set-key (kbd "A-3") 'insert-pound) ;; On a uk keyboard, you need to press alt and we have disabled it
+(global-set-key (kbd "M-3") 'insert-pound) ;; On a uk keyboard, you need to press alt and we have disabled it
 
 (global-unset-key (kbd "M-3")) ;; Was 'digit-argument but I don't often use it whereas pound is always used. An alternative would be M-£ but then it wouldn't be the same in other apps
-(global-set-key (kbd "M-3") 'insert-gbp) ;; On a uk keyboard, you need to press alt and we have disabled it
+;;(global-set-key (kbd "M-3") 'insert-gbp) ;; On a uk keyboard, you need to press alt and we have disabled it
 
 ;; These rebind the cmd key where possible - they usually use meta but its easier to hit cmd
 (global-set-key (kbd "s-<") 'beginning-of-buffer)

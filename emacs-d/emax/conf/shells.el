@@ -7,7 +7,7 @@
 
 (load "ssh-shell.el")
 
-
+(setq explicit-shell-file-name "/bin/zsh")
 
 ;; Disable all bold fonts
 (mapc

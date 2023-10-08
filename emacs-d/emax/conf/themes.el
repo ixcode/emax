@@ -19,19 +19,7 @@
 
 
 
-;;(set-face-attribute 'fringe nil :background "#fffff5" :foreground "#2E2920")
-
-
-
-;; (when (eq system-type 'darwin)
-;;   (set-default-font "-apple-Monaco-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1"))
-
-;;(setq-default line-spacing 4)
-
-;; (when (not (package-installed-p 'doom-themes))
-;;   (package-install 'doom-themes))
-
-;;(require 'doom-themes)
+;;(set-face-att
 ;;(load-theme 'doom-nord t)
 
 ;;(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled

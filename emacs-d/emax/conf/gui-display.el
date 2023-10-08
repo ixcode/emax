@@ -8,7 +8,7 @@
 
 ;;(load "themes.el") - should be able to load this in terminal and app
 
-(set-frame-font "Menlo 16")
+(set-frame-font "Menlo 18")
 
 (load "themes.el")
 

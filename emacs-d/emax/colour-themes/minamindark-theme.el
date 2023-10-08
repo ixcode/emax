@@ -114,7 +114,7 @@ Also bind `class' to ((class color) (min-colors 89))."
 
 
   `(highlight   ((t (:background ,minamin-bg-light-1 :inverse t))))
-  `(region      ((t (:background ,minamin-yellow))))
+  `(region      ((t (:background ,minamin-green+3 :foreground "#1E1E1E"))))
 
    ;;;; font lock
    `(font-lock-builtin-face           ((t (:foreground ,nord-teal))))
