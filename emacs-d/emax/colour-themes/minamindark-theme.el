@@ -133,6 +133,9 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(font-lock-variable-name-face     ((t (:foreground ,nord-magenta))))
    `(font-lock-warning-face           ((t (:foreground ,minamin-fg))))
 
+   ;;https://github.com/clojure-emacs/cider/blob/master/cider-overlays.el
+   `(cider-result-overlay-face        ((t (:foreground ,nord-orange :background ,minamin-grey-1 :box nil))))
+
    ;;https://magit.vc/manual/magit/Theming-Faces.html
    `(magit-branch                     ((t (:foreground ,minamin-fg :background ,minamin-bg-light :box nil))))
    `(magit-section-title              ((t (:foreground ,minamin-fg :background ,minamin-bg-light :box nil))))

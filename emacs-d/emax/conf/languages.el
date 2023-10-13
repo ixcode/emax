@@ -86,6 +86,13 @@
 (when (not (package-installed-p 'rainbow-mode))
   (package-install 'rainbow-mode))
 
+(unless (package-installed-p 'dumb-jump)
+  (package-install 'dumb-jump))
+
+
+
+(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+
 (require 'rainbow-mode)
 ;;(rainbow-mode 0)
 

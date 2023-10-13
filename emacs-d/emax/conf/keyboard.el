@@ -11,6 +11,9 @@
 ;; By default on os x, 'super' is mapped to copy, paste etc, like s-x, s-c, s-v, s-z
 ;; modifier settings can be: [control | meta | alt | super | hyper]
 
+;; C-h k KEY to find current mapping
+;; C-h f to find out what key a function is mapped to
+
 ;;; Code:
 (fset 'yes-or-no-p 'y-or-n-p) ;; "y or n" instead of "yes or no"
 
@@ -59,6 +62,11 @@
 (global-set-key (kbd "M-b") 'backward-word)
 
 (global-set-key (kbd "C-2") 'er/expand-region)
+
+
+(global-set-key (kbd "s-b") 'xref-find-definitions)
+(global-set-key (kbd "M-s-<left>") 'xref-go-back)
+(global-set-key (kbd "M-s-<right>") 'xref-go-forward)
 
 (cua-mode t)
 
