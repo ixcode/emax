@@ -87,13 +87,27 @@
 (require 'projectile)
 
 (global-unset-key (kbd "<s-p>"))
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
 
 (setq projectile-project-search-path '("~/Code/"))
+
+(projectile-mode +1)
+
+(unless (package-installed-p 'dumb-jump)
+  (package-install 'dumb-jump))
+
+(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
 (require 'expand-region)
 (global-set-key (kbd "M-<up>") 'er/expand-region)
 (global-set-key (kbd "M-<down>") 'er/contract-region)
+
+(unless (package-installed-p 'iedit)
+  (package-install 'iedit))
+
+(require 'iedit)
+
+(global-set-key (kbd "S-<f6>") 'iedit-mode)
 
 (provide 'foundations)
 ;;; foundations.el ends here
