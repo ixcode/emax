@@ -17,8 +17,8 @@
 (fringe-mode 0)
 
 
-(require 'linum)
-(setq linum-format " %4d ")
+;;(require 'linum)
+;;(setq linum-format " %4d ")
 
 ;;(global-linum-mode 1)
 

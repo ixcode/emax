@@ -150,6 +150,9 @@
 (eval-after-load "term"
   '(define-key term-raw-map (kbd "s-v") 'term-paste))
 
+(set-default 'explicit-shell-file-name "/bin/zsh")
+
+
 ;; (add-hook
 ;;      'term-mode-hook
 ;;      (lambda ()

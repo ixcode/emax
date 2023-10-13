@@ -18,7 +18,6 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-(set-default 'explicit-shell-file-name "/bin/zsh")
 
 ;; copies path environment from the shell into emacs
 (when (not (package-installed-p 'exec-path-from-shell))
@@ -61,6 +60,7 @@
 ;;(server-start)
 
 (load "ido-conf.el")
+;;(load "ivy-conf.el")
 
 ;; Use spaces instead of tab
 (setq-default indent-tabs-mode nil) ;; Can put nil or t if want spaces instead of tabs
@@ -81,6 +81,19 @@
 (require 'evil)
 ;;(evil-mode 1)
 
+(unless (package-installed-p 'projectile)
+  (package-install 'projectile))
+
+(require 'projectile)
+
+(global-unset-key (kbd "<s-p>"))
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+
+(setq projectile-project-search-path '("~/Code/"))
+
+(require 'expand-region)
+(global-set-key (kbd "M-<up>") 'er/expand-region)
+(global-set-key (kbd "M-<down>") 'er/contract-region)
 
 (provide 'foundations)
 ;;; foundations.el ends here
