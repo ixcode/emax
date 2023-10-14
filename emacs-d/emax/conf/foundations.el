@@ -99,8 +99,8 @@
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
 (require 'expand-region)
-(global-set-key (kbd "M-<up>") 'er/expand-region)
-(global-set-key (kbd "M-<down>") 'er/contract-region)
+(global-set-key (kbd "s-<up>") 'er/expand-region)
+(global-set-key (kbd "s-<down>") 'er/contract-b)
 
 (unless (package-installed-p 'iedit)
   (package-install 'iedit))

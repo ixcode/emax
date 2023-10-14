@@ -541,5 +541,8 @@
 ;;(require 'dockerfile-mode)
 ;;(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
 
+(when (not (package-installed-p 'sass-mode))
+  (package-inqstall 'sass-mode))
+
 (provide 'languages)
 ;;; languages.el ends here
