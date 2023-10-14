@@ -107,7 +107,13 @@
 
 (require 'iedit)
 
-(global-set-key (kbd "S-<f6>") 'iedit-mode)
+;;(global-set-key (kbd "S-<f6>") 'iedit-mode)
+(global-set-key (kbd "S-<f6>") 'lsp-rename)
+
+(unless (package-installed-p 'command-log-mode)
+  (package-install 'command-log-mode))
+(require 'command-log-mode)
+
 
 (provide 'foundations)
 ;;; foundations.el ends here

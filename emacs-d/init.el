@@ -24,7 +24,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(iedit projectile nim-mode elpy flycheck web-mode go-mode markdown-mode sass-mode lua-mode slim-mode haml-mode nav paredit cider clojure-mode rainbow-mode rainbow-delimiters yaml-mode find-file-in-project fish-mode csv-mode vagrant-tramp expand-region yasnippet-snippets magit ido-completing-read+ google-this google-maps google-c-style google auto-complete-nxml auto-complete-exuberant-ctags auto-complete-clang auto-complete-chunk auto-complete-c-headers auto-complete-auctex)))
+   '(command-log-mode lsp-java lsp-mode iedit projectile nim-mode elpy flycheck web-mode go-mode markdown-mode sass-mode lua-mode slim-mode haml-mode nav paredit cider clojure-mode rainbow-mode rainbow-delimiters yaml-mode find-file-in-project fish-mode csv-mode vagrant-tramp expand-region yasnippet-snippets magit ido-completing-read+ google-this google-maps google-c-style google auto-complete-nxml auto-complete-exuberant-ctags auto-complete-clang auto-complete-chunk auto-complete-c-headers auto-complete-auctex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

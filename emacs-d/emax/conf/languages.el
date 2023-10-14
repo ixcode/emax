@@ -541,8 +541,16 @@
 ;;(require 'dockerfile-mode)
 ;;(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
 
-(when (not (package-installed-p 'sass-mode))
-  (package-inqstall 'sass-mode))
+(unless (package-installed-p 'lsp-mode)
+  (package-install 'lsp-mode))
+
+(unless (package-installed-p 'lsp-java)
+  (package-install 'lsp-java))
+
+(require 'lsp-java)
+(add-hook 'java-mode-hook #'lsp)
+
+(electric-pair-mode 1) 
 
 (provide 'languages)
 ;;; languages.el ends here
