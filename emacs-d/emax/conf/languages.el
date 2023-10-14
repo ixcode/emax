@@ -468,6 +468,8 @@
 (when (not (package-installed-p 'web-mode))
   (package-install 'web-mode))
 
+;;(defun count-invisible-character-ranges (a b))
+
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))

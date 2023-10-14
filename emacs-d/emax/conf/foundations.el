@@ -114,6 +114,16 @@
   (package-install 'command-log-mode))
 (require 'command-log-mode)
 
+(unless (package-installed-p 'mini-modeline)
+  (package-install 'mini-modeline))
+
+(require 'mini-modeline)
+;;(mini-modeline-mode t)
+;;(setq mini-modeline-truncate-p t)
+
+(setq resize-mini-windows nil) ;; grow-only or t
+
+(setq sgml-quick-keys 'close)
 
 (provide 'foundations)
 ;;; foundations.el ends here
