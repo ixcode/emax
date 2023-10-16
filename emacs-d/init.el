@@ -3,17 +3,18 @@
 ;;; Commentary:
 
 ;;; Code:
-(message "[emax] : This is the start of something beautiful...")
+(message "[emax] : A beginning is a delicate time...")
 
 ;; If having trouble loading - can do this open -a /Applications/Emacs.app --args --debug-init
-
 
 (add-to-list 'load-path "~/.emacs.d/emax/lib")
 (add-to-list 'load-path "~/.emacs.d/emax/conf")
 
+(load "emax-core")
+
 (if (display-graphic-p)
-  (load "init-for-ui")
-  (load "init-for-terminal"))
+   (load "init-for-ui")
+   (load "init-for-terminal"))
 
 
 (provide 'init)

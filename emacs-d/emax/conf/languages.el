@@ -80,15 +80,6 @@
 (when (not (package-installed-p 'rainbow-delimiters))
   (package-install 'rainbow-delimiters))
 
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-
-(when (not (package-installed-p 'rainbow-mode))
-  (package-install 'rainbow-mode))
-
-
-(require 'rainbow-mode)
-;;(rainbow-mode 0)
 
 ;;https://stackoverflow.com/questions/16048231/how-to-enable-a-non-global-minor-mode-by-default-on-emacs-startup
 (define-globalized-minor-mode emax-global-rainbow-mode rainbow-mode

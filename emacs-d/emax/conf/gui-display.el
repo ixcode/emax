@@ -16,6 +16,16 @@
 (scroll-bar-mode -1) ;; hide scrollbars
 (fringe-mode 0)
 
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+(when (not (package-installed-p 'rainbow-mode))
+  (package-install 'rainbow-mode))
+
+
+(require 'rainbow-mode)
+(rainbow-mode 1)
+
 
 ;;(require 'linum)
 ;;(setq linum-format " %4d ")
