@@ -25,3 +25,5 @@ transient
 eclipse.jdt.ls
 projectile-bookmarks.eld
 workspace
+.dap-breakpoints
+amx-items
