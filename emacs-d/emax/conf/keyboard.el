@@ -70,6 +70,10 @@
 
 (cua-mode t)
 
+(require 'expand-region)
+(global-set-key (kbd "s-<up>") 'er/expand-region)
+(global-set-key (kbd "s-<down>") 'er/contract-b)
+
 (provide 'keyboard)
 ;;; keyboard.el ends here
 

@@ -33,7 +33,7 @@
 (recentf-mode 1)
 
 
-(setq exec-path (append exec-path '("/usr/local/bin")))
+(setq exec-path (append exec-path '("/usr/local/zsh")))
 
 (defun setenv-from-shell (varname)
   (setenv varname (env-var-from-shell varname)))
@@ -58,9 +58,6 @@
 
 
 ;;(server-start)
-
-(load "ido-conf.el")
-;;(load "ivy-conf.el")
 
 ;; Use spaces instead of tab
 (setq-default indent-tabs-mode nil) ;; Can put nil or t if want spaces instead of tabs
@@ -98,9 +95,6 @@
 
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
-(require 'expand-region)
-(global-set-key (kbd "s-<up>") 'er/expand-region)
-(global-set-key (kbd "s-<down>") 'er/contract-b)
 
 (unless (package-installed-p 'iedit)
   (package-install 'iedit))
@@ -117,7 +111,7 @@
 (unless (package-installed-p 'mini-modeline)
   (package-install 'mini-modeline))
 
-(require 'mini-modeline)
+;;(require 'mini-modeline)
 ;;(mini-modeline-mode t)
 ;;(setq mini-modeline-truncate-p t)
 

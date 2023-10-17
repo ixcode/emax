@@ -1,21 +1,18 @@
-;;; package --- Summary
-;; Provides entry point when comfiguring in the ui
-;;; Commentary:
-;;; Code:
+;;; init-for-ui.el - Configure everything in UI mode
+
 (message "[emax] Configuring EMAX in UI mode")
 
 
-(emax-load '((startup-message     t)
-             (keyboard            t)
-	     (gui-display         t)
+(emax-load '((gui-display         t)
+	     (startup-message     t)
 	     (keyboard            t)
-	     (gui-display         t)
-	     (foundations         t)
+             (foundations         t)
+             (auto-completion     t) 	     
 	     (shells              t)
-	     (languages           nil)
+	     (coding              t)
 	     (journal             nil)))
 
 (emax-message-line "Emax is happily configured, enjoy.")
 
-(provide 'init-for-ui)
+
 ;;; init-for-ui.el ends here

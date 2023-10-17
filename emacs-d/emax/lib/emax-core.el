@@ -1,3 +1,6 @@
+;;; emacs-core.el
+;; Core utility functions of emax
+
 
 (defun emax-message (message &rest params)
        (message "[emax] %s" message params))
@@ -34,4 +37,30 @@
 	  (enabled (car (cdr item))))
       (if enabled
 	  (emax-load-module module)
+	(emax-message (format "Module \"%s\" - not enabled" module))))))
+
+(defun emax-make-conf-file-name (symbol)
+  (concat (symbol-name symbol) "-conf.el"))
+
+
+(defun emax-conf-module (module)
+  "Configures a module"
+  (interactive)
+  (let ((module-conf-name (emax-make-conf-file-name module)))
+    (emax-message (format "Configuring  module \"%s\"" module-conf-name))
+    (condition-case err
+	(progn
+	  (load module-conf-name)
+	  (emax-message "Module configured, no errors."))
+      (error
+       (emax-message (format "\nERROR: Failed to load module \"%s\": %s\n" module-conf-name err)) ))))
+
+(defun emax-conf (module-list)
+  "Goes through the list of modules and configures them, each module item should be a pair with the module name and t for wether to load it or nil if not"
+  (emax-message "Configuring modules...")
+  (dolist (item module-list)
+    (let ((module  (car item))
+	  (enabled (cdr item)))
+      (if enabled
+	  (emax-conf-module module)
 	(emax-message (format "Module \"%s\" - not enabled" module))))))

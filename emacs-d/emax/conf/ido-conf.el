@@ -4,24 +4,20 @@
 
 ;;; Code:
 
-(require 'ido)
+(use-package ido
+  :ensure t)
+(use-package ido-completing-read+
+  :ensure t)
+(use-package amx ;; Provides keybindings when looking things up
+  :ensure t)
+
 
 (ido-mode 1)
 (ido-everywhere 1)
-
-(when (not (package-installed-p 'ido-completing-read+)) ;;Replaces ido-ubiquitous
-  (package-install 'ido-completing-read+))
-
-
-
-;;(require 'idomenu)
-
-(require 'ido-completing-read+)
-(ido-ubiquitous-mode 1)
-
+(ido-ubiquitous-mode 1) ; completing-read
 (icomplete-mode 1)
 
-;;ido-save-directory-list-file "~/Dropbox/emacs/ido.last"
+(amx-mode 1)
 
 (setq
  ido-enable-prefix nil
@@ -33,29 +29,21 @@
  ido-ignore-extensions t ; uses completion-ignored-extensions
  ido-use-virtual-buffers t
  ido-max-directory-size nil
- ido-max-work-file-list 50)
+ ido-max-work-file-list 50
+ suggest-key-bindings t
+ enable-recursive-minibuffers t
+ ido-ignore-buffers '("^ " "\.deft" "^\\*temp-shell*")
+ ido-ignore-directories '("\\`\\.\\./" "\\`\\./")
+ ido-ignore-files '("\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./" "\\`__pycache__/")
+ ido-file-extensions-order '(".el" ".hs" ".py")
+ minibuffer-prompt-properties  '(read-only t
+                                 point-entered minibuffer-avoid-prompt
+                                 face minibuffer-prompt))
 
 
-;; This should prevent the "Read-only enabled for this buffer but it doesnt!
-(setq suggest-key-bindings nil ; Don't send me useless messages during M-x
-      enable-recursive-minibuffers t)
 
-
-;; (add-many-to-list 'completion-ignored-extensions
-;;                '(".fdb_latexmk" ".prv" ".synctex.gz"))
-
-(setq ido-ignore-buffers
-      '("^ " "\.deft" "^\\*temp-shell*")
-      ido-ignore-directories
-      '("\\`\\.\\./" "\\`\\./")
-      ido-ignore-files
-      '("\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./" "\\`__pycache__/")
-      ido-file-extensions-order '(".el" ".hs" ".py"))
-
-(setq minibuffer-prompt-properties
-      '(read-only t
-        point-entered minibuffer-avoid-prompt
-        face minibuffer-prompt))
+(provide 'ido-conf)
+;;; ido-conf.el ends here
 
 ;; For virtual buffers
 ;;(setq recentf-max-saved-items 50)
@@ -86,10 +74,8 @@
 ;;     '(("+" ido-make-directory))))
 
 ;; (add-hook 'ido-minibuffer-setup-hook 'setup-ido)
+;;(require 'idomenu)
 
-(ido-mode 1)
-(ido-everywhere 1) ; read-file-name etc
-(ido-ubiquitous-mode 1) ; completing-read
 
-(provide 'ido-conf)
-;;; ido-conf.el ends here
+
+;;ido-save-directory-list-file "~/Dropbox/emacs/ido.last"

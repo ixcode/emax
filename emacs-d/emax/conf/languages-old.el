@@ -281,7 +281,6 @@
 (add-hook 'markdown-mode 'goto-address-mode)
 
 
-(setq explicit-shell-file-name "/bin/bash")
 
 (load "nodejs-mode.el")
 (require 'nodejs-mode)
@@ -321,6 +320,8 @@
 (setq ac-show-menu-immediately-on-auto-complete t)
 (setq ac-auto-start 2)
 (setq ac-candidate-menu-min 0)
+
+
 
 
 
@@ -477,6 +478,7 @@
       '(("php" . "\\.php\\'")
         ("blade"  . "\\.blade\\.")
         ("django" . "\\.html\\'")))
+
 
 
 (when (not (package-installed-p 'flycheck))

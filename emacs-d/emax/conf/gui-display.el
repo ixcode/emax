@@ -37,6 +37,7 @@
 
 (global-hl-line-mode)
 (set-cursor-color 'magenta)
+(set-default 'truncate-lines nil)
 
 ;;
 (load "modeline.el")
