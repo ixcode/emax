@@ -1,4 +1,8 @@
-;;; init-for-ui.el - Configure everything in UI mode
+;;; package --- Summary
+;;coding.el - Provides support for various coding languages
+;;; Commentary:
+;;; Code:
+(require 'emax-core)
 
 (message "[emax] Configuring EMAX in UI mode")
 
@@ -15,4 +19,5 @@
 (emax-message-line "Emax is happily configured, enjoy.")
 
 
+(provide 'init-for-ui)
 ;;; init-for-ui.el ends here

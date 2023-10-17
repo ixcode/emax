@@ -1,4 +1,8 @@
-;;; coding.el - Provides support for various coding languages
+;;; package --- Summary
+;;coding.el - Provides support for various coding languages
+;;; Commentary:
+;;; Code:
+(require 'emax-core)
 
 (use-package magit :ensure t)
 
@@ -12,5 +16,9 @@
              (lsp               .  t)
              (nav               .  t)
              (yasnippet         .  t)
+             (projectile        .  t)
              (flycheck          .  t)))
+
+(provide 'coding)
+;;; coding.el ends here
 

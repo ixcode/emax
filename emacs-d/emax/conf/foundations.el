@@ -78,18 +78,6 @@
 (require 'evil)
 ;;(evil-mode 1)
 
-(unless (package-installed-p 'projectile)
-  (package-install 'projectile))
-
-(require 'projectile)
-
-(global-unset-key (kbd "<s-p>"))
-(define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
-
-(setq projectile-project-search-path '("~/Code/"))
-
-(projectile-mode +1)
-
 (unless (package-installed-p 'dumb-jump)
   (package-install 'dumb-jump))
 

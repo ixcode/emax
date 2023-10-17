@@ -56,7 +56,7 @@
        (emax-message (format "\nERROR: Failed to load module \"%s\": %s\n" module-conf-name err)) ))))
 
 (defun emax-conf (module-list)
-  "Goes through the list of modules and configures them, each module item should be a pair with the module name and t for wether to load it or nil if not"
+  "Go through the list of modules (as MODULE-LIST) and configures."
   (emax-message "Configuring modules...")
   (dolist (item module-list)
     (let ((module  (car item))
@@ -64,3 +64,6 @@
       (if enabled
 	  (emax-conf-module module)
 	(emax-message (format "Module \"%s\" - not enabled" module))))))
+
+(provide 'emax-core)
+;;; emax-core.el ends here
