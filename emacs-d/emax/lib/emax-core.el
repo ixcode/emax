@@ -1,69 +1,72 @@
-;;; emacs-core.el
-;; Core utility functions of emax
-
-
-(defun emax-message (message &rest params)
-       (message "[emax] %s" message params))
+;;; package --- Summary
+;;  emax-core.el - Provides support for various coding languages
+;;; Commentary:
+;;; Code:
+(defun emax-log (log-message &rest params)
+  "Prints a formatted (as LOG-MESSAGE) with (as PARAMS) to the *Messages* buffer."
+  (apply #'message (concat "[emaxs] - " log-message) params))
 
 (defun emax-message-line (message)
-  (emax-message "--------------------------------------------------------------------------------------------")
-  (emax-message message)
-  (emax-message "--------------------------------------------------------------------------------------------")
+  "Prints a (as MESSAGE) surrounded with a kind of box."
+  (emax-log "--------------------------------------------------------------------------------------------")
+  (emax-log message)
+  (emax-log "--------------------------------------------------------------------------------------------")
   nil)
 
 (defun emax-make-module-file-name (symbol)
+  "Add '.el' to (as SYMBOL)."
   (concat (symbol-name symbol) ".el"))
 
 
 (defun emax-load-module (module)
-  "Loads a module from emax which is basically just an '.el' file"
+  "Load a (as MODULE) from emax which is basically just an '.el' file."
   (interactive)
   (let ((module-file-name (emax-make-module-file-name module)))
-    (emax-message "--------------------------------------------------------------------------------------------")
-    (emax-message (format "Loading module \"%s\"" module-file-name))
+    (emax-log "--------------------------------------------------------------------------------------------")
+    (emax-log "Loading module \"%s\"" module-file-name)
     (condition-case err
 	(progn
 	  (load module-file-name)
-	  (emax-message "Module loaded, no errors."))
+	  (emax-log "Module loaded, no errors."))
       (error
-       (emax-message (format "\nERROR: Failed to load module \"%s\": %s\n" module-file-name err)) )))
-  (emax-message "--------------------------------------------------------------------------------------------\n"))
+       (emax-log "\nERROR: Failed to load module \"%s\": %s\n" module-file-name err) )))
+  (emax-log "--------------------------------------------------------------------------------------------\n"))
 
-(defun emax-load (module-list)
-  "Goes through the list of modules and loads them, each module item should be a pair with the module name and t for wether to load it or nil if not"
-  (emax-message "Loading modules from \"init-for-ui\"")
+(defun emax-conf-sections (module-list)
+  "Load the configuration sections (as MODULE-LIST)."
+  (emax-log "Loading configuration sections.")
   (dolist (item module-list)
     (let ((module (car item))
-	  (enabled (car (cdr item))))
+	  (enabled (cdr item)))
       (if enabled
 	  (emax-load-module module)
-	(emax-message (format "Module \"%s\" - not enabled" module))))))
+	(emax-log "Module \"%s\" - not enabled" module)))))
 
 (defun emax-make-conf-file-name (symbol)
+  "Add '-conf.el' to the name of (as SYMBOL)."
   (concat (symbol-name symbol) "-conf.el"))
 
 
 (defun emax-conf-module (module)
-  "Configures a module"
-  (interactive)
+  "Configure a (as MODULE)."
   (let ((module-conf-name (emax-make-conf-file-name module)))
-    (emax-message (format "Configuring  module \"%s\"" module-conf-name))
+    (emax-log "Configuring  module \"%s\"" module-conf-name)
     (condition-case err
 	(progn
 	  (load module-conf-name)
-	  (emax-message "Module configured, no errors."))
+	  (emax-log "Module configured, no errors."))
       (error
-       (emax-message (format "\nERROR: Failed to load module \"%s\": %s\n" module-conf-name err)) ))))
+       (emax-log "\nERROR: Failed to load module \"%s\": %s\n" module-conf-name err) ))))
 
 (defun emax-conf (module-list)
   "Go through the list of modules (as MODULE-LIST) and configures."
-  (emax-message "Configuring modules...")
+  (emax-log "Configuring modules...")
   (dolist (item module-list)
     (let ((module  (car item))
 	  (enabled (cdr item)))
       (if enabled
 	  (emax-conf-module module)
-	(emax-message (format "Module \"%s\" - not enabled" module))))))
+	(emax-log "Module \"%s\" - not enabled" module)))))
 
 (provide 'emax-core)
 ;;; emax-core.el ends here

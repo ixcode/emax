@@ -8,7 +8,25 @@
 
 ;;(load "themes.el") - should be able to load this in terminal and app
 
-(set-frame-font "Menlo 18")
+(defconst default-font-size 16)
+
+(defun set-global-font-size (font-size)
+  "Set the frame font to (as FONT-SIZE)."
+  (set-frame-font (format "Menlo %d" font-size)))
+
+(set-global-font-size default-font-size)
+
+(defvar presentation-toggle nil)
+
+(defun emax-toggle-presentation-mode ()
+  "Toggle bigger fonts everywhere."
+  (interactive)
+  (if presentation-toggle
+      (progn (set-global-font-size default-font-size)
+             (setq presentation-toggle nil))
+    
+    (progn (set-global-font-size 20)
+           (setq presentation-toggle t))))
 
 (load "themes.el")
 
