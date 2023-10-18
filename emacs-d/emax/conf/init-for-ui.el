@@ -14,6 +14,7 @@
                       (auto-completion   .  t)
 	              (shells            .  t)
 	              (coding            .  t)
+                      (chat-gpt          .  t)
 	              (journal           .  nil)))
 
 (emax-message-line "Emax is happily configured, enjoy.")

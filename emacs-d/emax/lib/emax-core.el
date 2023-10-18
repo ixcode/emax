@@ -4,7 +4,7 @@
 ;;; Code:
 (defun emax-log (log-message &rest params)
   "Prints a formatted (as LOG-MESSAGE) with (as PARAMS) to the *Messages* buffer."
-  (apply #'message (concat "[emaxs] - " log-message) params))
+  (apply #'message (concat "[emax] - " log-message) params))
 
 (defun emax-message-line (message)
   "Prints a (as MESSAGE) surrounded with a kind of box."
