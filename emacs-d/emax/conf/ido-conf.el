@@ -21,6 +21,7 @@
 
 (setq
  ido-enable-prefix nil
+ ido-use-faces t
  ido-enable-flex-matching t
  ido-create-new-buffer 'always
  ido-use-filename-at-point 'guess
@@ -39,7 +40,6 @@
  minibuffer-prompt-properties  '(read-only t
                                  point-entered minibuffer-avoid-prompt
                                  face minibuffer-prompt))
-
 
 
 (provide 'ido-conf)

@@ -23,9 +23,10 @@
     ("minamin-grey"       . "#3F3F3F")
     ("minamin-grey+1"     . "#4F4F4F")
     ("minamin-grey+2"     . "#5F5F5F")
-    ("minamin-grey+3"     . "#6F6F6F")
-    ("minamin-grey+4"     . "#cccccc")
-    ("minamin-grey+5"     . "#f0f0f0")
+    ("minamin-grey+3"     . "#6c757d")
+    ("minamin-grey+4"     . "#6F6F6F")
+    ("minamin-grey+5"     . "#cccccc")
+    ("minamin-grey+6"     . "#f0f0f0")
     ("minamin-red+1"      . "#DCA3A3")
     ("minamin-red"        . "#cc0000")
     ("minamin-red-1"      . "#BC8383")
@@ -51,6 +52,7 @@
     ("minamin-blue-4"     . "#0b00b2")
     ("minamin-blue-5"     . "#08007f")
     ("minamin-magenta"    . "#6622CC")
+    ("minamin-light-brown"    . "#d5bdaf")
 
     ;; From doom-nord
     ("nord-grey"               . "#434C5E")
@@ -64,10 +66,7 @@
     ("nord-magenta"            . "#B58DAE")
     ("nord-violet"             . "#a9a1e1")
     ("nord-cyan"               . "#86C0D1")
-    ("nord-dark-cyan"          . "#507681")
-
-
-    )
+    ("nord-dark-cyan"          . "#507681"))
   "List of minamin colors.
 Each element has the form (NAME . HEX).
 
@@ -120,14 +119,14 @@ Also bind `class' to ((class color) (min-colors 89))."
   `(minibuffer-prompt ((t (:foreground ,minamin-green+4 ))))
 
 ;;;; font lock
-  `(font-lock-builtin-face           ((t (:foreground ,nord-teal))))
-   `(font-lock-comment-face           ((t (:foreground ,minamin-green-1))))
-   `(font-lock-comment-delimiter-face ((t (:foreground ,minamin-green-1))))
+  `(font-lock-builtin-face            ((t (:foreground ,nord-teal))))
+   `(font-lock-comment-face           ((t (:foreground ,minamin-grey+3))))
+   `(font-lock-comment-delimiter-face ((t (:foreground ,minamin-grey+3))))
    `(font-lock-constant-face          ((t (:foreground ,nord-magenta))))
    `(font-lock-doc-face               ((t (:foreground ,minamin-green))))
    `(font-lock-doc-string-face        ((t (:foreground ,minamin-green))))
-   `(font-lock-function-name-face     ((t (:foreground ,nord-teal))))
-   `(font-lock-keyword-face           ((t (:foreground ,nord-blue))))
+   `(font-lock-function-name-face     ((t (:foreground ,nord-teal :weight normal))))
+   `(font-lock-keyword-face           ((t (:foreground ,nord-blue :weight normal))))
    `(font-lock-negation-char-face     ((t (:foreground ,minamin-fg))))
    `(font-lock-preprocessor-face      ((t (:foreground ,minamin-grey+3))))
    `(font-lock-string-face            ((t (:foreground ,minamin-green+2))))
@@ -166,13 +165,15 @@ Also bind `class' to ((class color) (min-colors 89))."
 
    `(vterm-color-default              ((t (:foreground nil :background nil :inherit default))))
    `(vterm-color-black                ((t (:foreground ,nord-cyan      :background ,nord-cyan))))
-   `(vterm-color-blue                 ((t (:foreground ,nord-blue      :background ,nord-cyan))))
+   `(vterm-color-blue                 ((t (:foreground ,nord-blue      :background ,nord-blue))))
    `(vterm-color-cyan                 ((t (:foreground ,nord-cyan      :background ,nord-cyan))))
-   `(vterm-color-green                ((t (:foreground ,nord-green     :background ,nord-cyan))))
-   `(vterm-color-magenta              ((t (:foreground ,nord-magenta   :background ,nord-cyan))))
-   `(vterm-color-red                  ((t (:foreground ,nord-red       :background ,nord-cyan))))
+   `(vterm-color-green                ((t (:foreground ,nord-green     :background ,nord-green))))
+   `(vterm-color-magenta              ((t (:foreground ,nord-magenta   :background ,nord-magenta))))
+   `(vterm-color-red                  ((t (:foreground ,nord-red       :background ,nord-red))))
    `(vterm-color-white                ((t (:foreground ,minamin-grey+5 :background ,nord-cyan))))
-   `(vterm-color-yellow               ((t (:foreground ,nord-cyan      :background ,nord-cyan))))
+   `(vterm-color-yellow               ((t (:foreground ,nord-yellow      :background ,nord-yellow))))
+
+   `(minibuffer-prompt               ((t (:foreground ,nord-green :weight normal))))
 
   ))
 

@@ -23,6 +23,8 @@
               ("s-v" . vterm-yank)
               ("M-3" . emax-insert-pound-vterm)))
 
+(add-hook 'vterm-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
+
 (setq eterm-256color-disable-bold t)
 (add-hook 'term-mode-hook #'eterm-256color-mode)
 

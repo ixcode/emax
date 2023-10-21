@@ -54,12 +54,12 @@
 
 
 (global-hl-line-mode)
-(set-cursor-color 'magenta)
-(set-default 'truncate-lines nil)
-
+(set-default 'truncate-lines t)
+(set-face-bold 'bold nil)
 ;;
 (load "modeline.el")
 
+(set-cursor-color 'magenta)
 
 
 
