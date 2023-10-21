@@ -170,7 +170,7 @@ want to use in the modeline *in lieu of* the original.")
    emacsclient
    mode-line-misc-info
    " [" (:propertize mode-name face mode-line-mode-face) 
-   (:eval (propertize (format-mode-line minor-mode-alist) 'face 'mode-line-minor-mode-face))
+;;   (:eval (propertize (format-mode-line minor-mode-alist) 'face 'mode-line-minor-mode-face))
    (:propertize mode-line-process face mode-line-process-face) "]"
    (vc-mode vc-mode) " "
    

@@ -121,8 +121,8 @@ Also bind `class' to ((class color) (min-colors 89))."
 
 ;;;; font lock
   `(font-lock-builtin-face           ((t (:foreground ,nord-teal))))
-   `(font-lock-comment-face           ((t (:foreground ,minamin-grey+3))))
-   `(font-lock-comment-delimiter-face ((t (:foreground ,minamin-grey+3))))
+   `(font-lock-comment-face           ((t (:foreground ,minamin-green-1))))
+   `(font-lock-comment-delimiter-face ((t (:foreground ,minamin-green-1))))
    `(font-lock-constant-face          ((t (:foreground ,nord-magenta))))
    `(font-lock-doc-face               ((t (:foreground ,minamin-green))))
    `(font-lock-doc-string-face        ((t (:foreground ,minamin-green))))
