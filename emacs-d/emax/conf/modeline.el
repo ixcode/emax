@@ -117,13 +117,13 @@ want to use in the modeline *in lieu of* the original.")
 
 (set-face-attribute 'mode-line-read-only-face nil
     :inherit 'mode-line-face
-    :foreground "#4271ae"
-    :box '(:line-width 2 :color "#4271ae"))
+    :foreground "green"
+    :box '(:line-width 2 :color "green"))
 (set-face-attribute 'mode-line-modified-face nil
     :inherit 'mode-line-face
-    :foreground "#c82829"
+    :foreground "green"
     ;;:background "#ffffff"
-    :box '(:line-width 2 :color "#c82829"))
+    :box '(:line-width 2 :color "green"))
 (set-face-attribute 'mode-line-unmodified-face nil
     :inherit 'mode-line-face
     
@@ -166,9 +166,8 @@ want to use in the modeline *in lieu of* the original.")
                       (if (>= (current-column) 80)
                           'mode-line-80col-face
                         'mode-line-position-face)))
-   " [%p] "
-   emacsclient
-   mode-line-misc-info
+;;   " [%p] " emacsclient
+   ;;mode-line-misc-info
    " [" (:propertize mode-name face mode-line-mode-face) 
 ;;   (:eval (propertize (format-mode-line minor-mode-alist) 'face 'mode-line-minor-mode-face))
    (:propertize mode-line-process face mode-line-process-face) "]"
