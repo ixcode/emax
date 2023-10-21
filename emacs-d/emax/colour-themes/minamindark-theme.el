@@ -114,6 +114,8 @@ Also bind `class' to ((class color) (min-colors 89))."
 
 
   `(highlight   ((t (:background ,minamin-grey-1 ))))
+  `(hl-line   ((t (:inherit nil :background "black"))))
+  
   `(region      ((t (:background ,minamin-green+3 :foreground "#1E1E1E"))))
   `(minibuffer-prompt ((t (:foreground ,minamin-green+4 ))))
 
@@ -161,6 +163,16 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(comint-highlight-input            ((t (:foreground ,minamin-grey+3))))
 
    `(linum            ((t (:foreground ,minamin-grey+4))))
+
+   `(vterm-color-default              ((t (:foreground nil :background nil :inherit default))))
+   `(vterm-color-black                ((t (:foreground ,nord-cyan      :background ,nord-cyan))))
+   `(vterm-color-blue                 ((t (:foreground ,nord-blue      :background ,nord-cyan))))
+   `(vterm-color-cyan                 ((t (:foreground ,nord-cyan      :background ,nord-cyan))))
+   `(vterm-color-green                ((t (:foreground ,nord-green     :background ,nord-cyan))))
+   `(vterm-color-magenta              ((t (:foreground ,nord-magenta   :background ,nord-cyan))))
+   `(vterm-color-red                  ((t (:foreground ,nord-red       :background ,nord-cyan))))
+   `(vterm-color-white                ((t (:foreground ,minamin-grey+5 :background ,nord-cyan))))
+   `(vterm-color-yellow               ((t (:foreground ,nord-cyan      :background ,nord-cyan))))
 
   ))
 

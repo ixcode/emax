@@ -5,19 +5,44 @@
 ;;; https://www.google.com/search?q=make+fish+default+shell&ie=utf-8&oe=utf-8&client=firefox-b-ab
 ;;; Code:
 
-(load "ssh-shell.el")
-
 (setq explicit-shell-file-name "/bin/zsh")
+
+(use-package eterm-256color
+  :ensure t)
+
+(require 'vterm)
+
+(defun emax-insert-pound-vterm ()
+  "Insert the # character into a vterm."
+  (interactive)
+  (vterm-send-string "#"))
+
+(use-package vterm
+  :ensure t
+  :bind (:map vterm-mode-map
+              ("s-v" . vterm-yank)
+              ("M-3" . emax-insert-pound-vterm)))
+
+(setq eterm-256color-disable-bold t)
+(add-hook 'term-mode-hook #'eterm-256color-mode)
+
+
+;; TOdo - add keybinding to map vterm-yank to s-V
+
 
 ;; Disable all bold fonts
 (mapc
-  (lambda (face)
-    (set-face-attribute face nil :weight 'normal :underline nil))
-  (face-list))
+ (lambda (face)
+   (set-face-attribute face nil :weight 'normal :underline nil))
+ (face-list))
+
+(load "ssh-shell.el")
 
 ;;(setq explicit-shell-file-name "/bin/bash")
 ;;(setq explicit-shell-file-name "/usr/local/bin/fish")
 (set-default 'system-uses-terminfo nil)
+
+
 
 (when (not (package-installed-p 'vagrant-tramp))
   (package-install 'vagrant-tramp))
