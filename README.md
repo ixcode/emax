@@ -10,3 +10,18 @@ If you don't like it and want to go back to your old ways, you can just do `./re
 # Making things work in iterm
 
 There is an preference to control how the option key behacves - its under "preferences/profiles/keys" - behaviour of right option key - set this to be "esc+"
+
+# Installation
+
+Need a heap of thing installed
+
+# TODO
+
+- Incanter
+- Rename to main branch
+- Auto check for updates on startup
+- Turn off bold fonts in markdown mode
+- Make F-n - jump semantically to next paragraph
+- Sync ssh directories with tramp so when you do C-x C-f it opens tramp from vterm
+- Make hl-line slightly less dark
+- Try and create a toolbar or status bar with the time in it

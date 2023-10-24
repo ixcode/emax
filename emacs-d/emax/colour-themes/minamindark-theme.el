@@ -12,10 +12,12 @@
 
 (deftheme minamindark "Minimal theme with dark background")
 
+;;#AAADB3  #DCDCDC  #1E1E1E
+
 (makunbound 'minamindark-colors-alist)
 (defvar minamindark-colors-alist
-  '(("minamin-fg"         . "#DCDCDC")
-    ("minamin-bg-light"   . "#1E1E1E")
+  '(("minamin-fg"         . "#C3C4CB") 
+    ("minamin-bg-light"   . "#212124")
     ("minamin-bg-light-1" . "#434C5E")
     ("minamin-purple"     . "#6622CC")
     ("minamin-grey-2"     . "#2B2B2B")
@@ -113,26 +115,29 @@ Also bind `class' to ((class color) (min-colors 89))."
 
 
   `(highlight   ((t (:background ,minamin-grey-1 ))))
-  `(hl-line   ((t (:inherit nil :background "black"))))
+  `(hl-line   ((t (:inherit nil :background "#282A2E"))))
   
   `(region      ((t (:background ,minamin-green+3 :foreground "#1E1E1E"))))
   `(minibuffer-prompt ((t (:foreground ,minamin-green+4 ))))
 
-;;;; font lock
-  `(font-lock-builtin-face            ((t (:foreground ,nord-teal))))
+   ;;;; font lock
+   `(font-lock-builtin-face           ((t (:foreground ,nord-blue))))
    `(font-lock-comment-face           ((t (:foreground ,minamin-grey+3))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,minamin-grey+3))))
    `(font-lock-constant-face          ((t (:foreground ,nord-magenta))))
    `(font-lock-doc-face               ((t (:foreground ,minamin-green))))
    `(font-lock-doc-string-face        ((t (:foreground ,minamin-green))))
-   `(font-lock-function-name-face     ((t (:foreground ,nord-teal :weight normal))))
-   `(font-lock-keyword-face           ((t (:foreground ,nord-blue :weight normal))))
+   `(font-lock-function-name-face     ((t (:foreground "#519FFC" :weight normal))))
+   `(font-lock-keyword-face           ((t (:foreground ,nord-orange :weight normal))))
    `(font-lock-negation-char-face     ((t (:foreground ,minamin-fg))))
    `(font-lock-preprocessor-face      ((t (:foreground ,minamin-grey+3))))
-   `(font-lock-string-face            ((t (:foreground ,minamin-green+2))))
-   `(font-lock-type-face              ((t (:foreground ,nord-yellow))))
-   `(font-lock-variable-name-face     ((t (:foreground ,nord-magenta))))
+   `(font-lock-string-face            ((t (:foreground "#6EB174"))))
+   `(font-lock-type-face              ((t (:foreground ,minamin-fg))))
+   `(font-lock-variable-name-face     ((t (:foreground ,minamin-fg))))
    `(font-lock-warning-face           ((t (:foreground ,minamin-fg))))
+
+   `(clojure-keyword-face             ((t (:foreground ,nord-blue))))
+   
 
    ;;https://github.com/clojure-emacs/cider/blob/master/cider-overlays.el
    `(cider-result-overlay-face        ((t (:foreground ,nord-orange :background ,minamin-grey-1 :box nil))))

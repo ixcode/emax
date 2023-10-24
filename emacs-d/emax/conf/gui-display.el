@@ -8,6 +8,8 @@
 
 ;;(load "themes.el") - should be able to load this in terminal and app
 
+(setq-default line-spacing 6)
+
 (defconst default-font-size 16)
 
 (defun set-global-font-size (font-size)
