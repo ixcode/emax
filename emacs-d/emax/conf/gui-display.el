@@ -63,6 +63,10 @@
 
 (set-cursor-color 'magenta)
 
+(defun my-display-numbers-hook ()
+  (display-line-numbers-mode 1))
+(add-hook 'prog-mode-hook 'my-display-numbers-hook)
+(add-hook 'lisp-mode-hook 'my-display-numbers-hook)
 
-
+(setq-default display-line-numbers-width 4)
 

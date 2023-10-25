@@ -137,6 +137,9 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(font-lock-warning-face           ((t (:foreground ,minamin-fg))))
 
    `(clojure-keyword-face             ((t (:foreground ,nord-blue))))
+
+   `(line-number                      ((t (:foreground ,minamin-grey+1 :italic nil :background ,minamin-bg-light))))
+   `(line-number-current-line         ((t (:foreground ,nord-blue :background "#282A2E"))))
    
 
    ;;https://github.com/clojure-emacs/cider/blob/master/cider-overlays.el
