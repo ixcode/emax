@@ -96,7 +96,7 @@ Also bind `class' to ((class color) (min-colors 89))."
   `(default      ((t (:foreground ,minamin-fg :background , minamin-bg-light))))
   `(cursor       ((t (:foreground ,minamin-fg :background,  minamin-grey+5))))
   `(cursor-color ((t (:foreground ,minamin-fg :background,  minamin-grey+5))))
-  `(fringe       ((t (:foreground ,minamin-bg-light :background ,minamin-grey+4))))
+  `(fringe       ((t (:foreground ,minamin-fg :background , minamin-bg-light))))
 
   `(header-line  ((t (:foreground ,minamin-bg-light
                                  :background ,minamin-grey+3

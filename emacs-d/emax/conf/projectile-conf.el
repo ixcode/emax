@@ -2,6 +2,9 @@
 (unless (package-installed-p 'projectile)
   (package-install 'projectile))
 
+(use-package ag
+  :ensure t)
+
 (require 'projectile)
 
 (global-unset-key (kbd "<s-p>"))

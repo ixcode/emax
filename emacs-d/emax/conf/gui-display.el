@@ -8,8 +8,8 @@
 
 ;;(load "themes.el") - should be able to load this in terminal and app
 
-(setq-default line-spacing 6)
-
+(setq-default line-spacing 5)
+;;(setq-default cursor-type '(hbar . 20))
 (defconst default-font-size 16)
 
 (defun set-global-font-size (font-size)
@@ -34,7 +34,11 @@
 
 (tool-bar-mode -1) ;; hide the toolbar
 (scroll-bar-mode -1) ;; hide scrollbars
-(fringe-mode 0)
+(setq fringe-mode 'left-only)
+
+(use-package vi-tilde-fringe
+  :ensure t)
+(add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
 
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
