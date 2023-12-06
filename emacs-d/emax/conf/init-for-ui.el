@@ -14,6 +14,7 @@
                       (auto-completion   .  t)
 	              (shells            .  t)
 	              (coding            .  t)
+                      (magit             .  t)
                       (chat-gpt          .  t)
 	              (journal           .  nil)))
 

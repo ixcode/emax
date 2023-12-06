@@ -8,9 +8,9 @@
 
 ;;(load "themes.el") - should be able to load this in terminal and app
 
-(setq-default line-spacing 5)
+(setq-default line-spacing 4)
 ;;(setq-default cursor-type '(hbar . 20))
-(defconst default-font-size 16)
+(defconst default-font-size 13)
 
 (defun set-global-font-size (font-size)
   "Set the frame font to (as FONT-SIZE)."

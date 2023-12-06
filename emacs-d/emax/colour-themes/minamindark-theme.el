@@ -139,7 +139,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(clojure-keyword-face             ((t (:foreground ,nord-blue))))
 
    `(line-number                      ((t (:foreground ,minamin-grey+1 :italic nil :background ,minamin-bg-light))))
-   `(line-number-current-line         ((t (:foreground ,nord-blue :background "#282A2E"))))
+   `(line-number-current-line         ((t (:foreground ,nord-blue :inherit t)))) ;; "#282A2E"
    
 
    ;;https://github.com/clojure-emacs/cider/blob/master/cider-overlays.el

@@ -82,7 +82,7 @@ want to use in the modeline *in lieu of* the original.")
 
 ;; Helper function
 (defun shorten-directory (dir max-length)
-  "Show up to `max-length' characters of a directory name `dir'."
+  "Show up to (as MAX-LENGTH) characters of a directory name (as DIR)."
   (let ((path (reverse (split-string (abbreviate-file-name dir) "/")))
         (output ""))
     (when (and path (equal "" (car path)))
