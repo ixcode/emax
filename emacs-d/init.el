@@ -17,6 +17,8 @@
 
 (load "emax-core")
 
+(setq vc-follow-symlinks t)
+
 (if (display-graphic-p)
    (load "init-for-ui")
    (load "init-for-terminal"))
